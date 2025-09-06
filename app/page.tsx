@@ -1,103 +1,125 @@
+import Link from "next/link";
 import Image from "next/image";
+import { Mic, Users, Heart, Play, TrendingUp } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 text-gray-900">
+      {/* Hero Section */}
+      <div className="text-center mb-12 sm:mb-16">
+        <div className="flex justify-center mb-6">
+          <Image 
+            src="/studios.png" 
+            alt="YA TU SABES STUDIO Logo" 
+            width={120} 
+            height={120}
+            className="rounded-2xl shadow-lg"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+          YA TU SABES STUDIO
+        </h1>
+        <p className="text-lg sm:text-xl text-black max-w-3xl mx-auto leading-relaxed mb-8">
+          Amplifying voices of entrepreneurs, artists, and changemakers in our community
+        </p>
+        
+        {/* Listener Counter */}
+        <div className="miami-gradient text-white rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto shadow-lg vibrant-hover">
+          <div className="flex items-center justify-center mb-4">
+            <TrendingUp size={32} className="mr-3" />
+            <h2 className="text-2xl sm:text-3xl font-bold">Monthly Listeners & Viewers</h2>
+          </div>
+          <div className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">
+            100,000+
+          </div>
+          <p className="text-lg opacity-90">Growing community of engaged listeners</p>
+        </div>
+      </div>
+
+      {/* Mission Statement */}
+      <div className="bg-white rounded-lg shadow-md p-6 sm:p-8 border mb-12 sm:mb-16">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">Our Mission</h2>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-base sm:text-lg text-black leading-relaxed mb-4">
+            At YA TU SABES STUDIO, our mission is to amplify the voices of entrepreneurs, artists, and other changemakers within our community by providing a platform for meaningful conversations and impactful storytelling. We are dedicated to shining a spotlight on individuals making a difference, offering them the visibility and exposure they deserve through authentic interviews, community-driven dialogue, and support that fuels growth.
+          </p>
+          <p className="text-base sm:text-lg text-black leading-relaxed mb-4">
+            This is more than just a podcast, it's a movement to uplift, empower and connect our people. If you're doing something real, this is your platform.
+          </p>
+          <p className="text-lg sm:text-xl font-bold miami-text text-center">YA TU SABES!</p>
+        </div>
+      </div>
+
+      {/* Services Preview */}
+      <div className="mb-12 sm:mb-16">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">Our Services</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border h-full flex flex-col vibrant-hover">
+            <div className="flex items-center mb-3">
+              <Mic size={24} className="text-blue-600 mr-3" />
+              <h3 className="text-lg sm:text-xl font-semibold">Podcast Packages</h3>
+            </div>
+            <p className="text-black mb-4 text-sm sm:text-base flex-grow">Professional podcast interviews and promotion packages starting at $200.</p>
+            <Link href="/pages/services" className="text-blue-600 hover:text-blue-800 font-semibold text-sm sm:text-base">
+              View Packages →
+            </Link>
+          </div>
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border h-full flex flex-col vibrant-hover">
+            <div className="flex items-center mb-3">
+              <Play size={24} className="text-green-600 mr-3" />
+              <h3 className="text-lg sm:text-xl font-semibold">Commercial Advertising</h3>
+            </div>
+            <p className="text-black mb-4 text-sm sm:text-base flex-grow">Professional radio commercials and advertising solutions.</p>
+            <Link href="/pages/services" className="text-green-600 hover:text-green-800 font-semibold text-sm sm:text-base">
+              Learn More →
+            </Link>
+          </div>
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border h-full flex flex-col vibrant-hover">
+            <div className="flex items-center mb-3">
+              <Users size={24} className="text-purple-600 mr-3" />
+              <h3 className="text-lg sm:text-xl font-semibold">Start Your Own Podcast</h3>
+            </div>
+            <p className="text-black mb-4 text-sm sm:text-base flex-grow">Create the name of your podcast with our one-time setup fee of $175.</p>
+            <Link href="/pages/start-your-own-podcast" className="text-purple-600 hover:text-purple-800 font-semibold text-sm sm:text-base">
+              Get Started →
+            </Link>
+          </div>
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border h-full flex flex-col vibrant-hover">
+            <div className="flex items-center mb-3">
+              <Heart size={24} className="text-pink-600 mr-3" />
+              <h3 className="text-lg sm:text-xl font-semibold">Community Resources</h3>
+            </div>
+            <p className="text-black mb-4 text-sm sm:text-base flex-grow">Supporting our community with valuable resources and connections.</p>
+            <Link href="/pages/community-resources" className="text-pink-600 hover:text-pink-800 font-semibold text-sm sm:text-base">
+              Explore →
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Partners Section */}
+      <div className="bg-white rounded-lg p-6 sm:p-8 border">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">Our Partners</h2>
+        <div className="text-center">
+          <p className="text-black mb-6 text-sm sm:text-base">
+            We're proud to work with amazing businesses and organizations in our community.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 items-center">
+            <div className="bg-gray-100 h-16 sm:h-24 rounded-lg flex items-center justify-center">
+              <span className="text-gray-500 text-xs sm:text-sm">Partner Logo</span>
+            </div>
+            <div className="bg-gray-100 h-16 sm:h-24 rounded-lg flex items-center justify-center">
+              <span className="text-gray-500 text-xs sm:text-sm">Partner Logo</span>
+            </div>
+            <div className="bg-gray-100 h-16 sm:h-24 rounded-lg flex items-center justify-center">
+              <span className="text-gray-500 text-xs sm:text-sm">Partner Logo</span>
+            </div>
+            <div className="bg-gray-100 h-16 sm:h-24 rounded-lg flex items-center justify-center">
+              <span className="text-gray-500 text-xs sm:text-sm">Partner Logo</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

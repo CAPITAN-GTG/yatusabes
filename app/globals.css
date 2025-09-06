@@ -3,6 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --miami-blue: #00b4d8;
+  --miami-pink: #ff6b9d;
+  --miami-yellow: #ffd60a;
+  --miami-purple: #7209b7;
+  --miami-orange: #ff8500;
 }
 
 @theme inline {
@@ -23,4 +28,36 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Miami-style gradient backgrounds */
+.miami-gradient {
+  background: linear-gradient(135deg, #00b4d8, #ff6b9d, #ffd60a);
+}
+
+.miami-gradient-blue {
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+}
+
+.miami-gradient-pink {
+  background: linear-gradient(135deg, #ff6b9d, #c77dff);
+}
+
+.miami-gradient-yellow {
+  background: linear-gradient(135deg, #ffd60a, #ff8500);
+}
+
+/* Vibrant hover effects */
+.vibrant-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Miami-style text effects */
+.miami-text {
+  background: linear-gradient(135deg, #00b4d8, #ff6b9d, #ffd60a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
