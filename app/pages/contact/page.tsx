@@ -1,9 +1,9 @@
 "use client"
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function Contact() {
+function ContactForm() {
   const searchParams = useSearchParams();
   const [selectedService, setSelectedService] = useState("");
 
@@ -13,6 +13,97 @@ export default function Contact() {
       setSelectedService(service);
     }
   }, [searchParams]);
+
+  return (
+    <div className="bg-white rounded-lg shadow-md p-6 sm:p-8 border">
+      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+      
+      <form className="space-y-6">
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
+            Full Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black placeholder-gray-600"
+            placeholder="Your full name"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
+            Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black placeholder-gray-600"
+            placeholder="your.email@example.com"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-black mb-2">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black placeholder-gray-600"
+            placeholder="(555) 123-4567"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="service" className="block text-sm font-medium text-black mb-2">
+            Service Interested In
+          </label>
+          <select
+            id="service"
+            name="service"
+            value={selectedService}
+            onChange={(e) => setSelectedService(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
+          >
+            <option value="">Select a service</option>
+            <option value="starter-package">Starter Package - The Launch Pad ($200)</option>
+            <option value="pro-package">Pro Package - The Amplifier ($600)</option>
+            <option value="elite-package">Elite Package - The Empire Builder ($1200)</option>
+            <option value="commercial-advertising">Commercial Advertising</option>
+            <option value="start-podcast">Start Your Own Podcast</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="message" className="block text-sm font-medium text-black mb-2">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={4}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black placeholder-gray-600"
+            placeholder="Tell us about your project or questions..."
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default function Contact() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
@@ -78,91 +169,9 @@ export default function Contact() {
         </div>
 
         {/* Contact Form */}
-        <div className="bg-white rounded-lg shadow-md p-6 sm:p-8 border">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-          
-          <form className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black placeholder-gray-600"
-                placeholder="Your full name"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black placeholder-gray-600"
-                placeholder="your.email@example.com"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-black mb-2">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black placeholder-gray-600"
-                placeholder="(555) 123-4567"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="service" className="block text-sm font-medium text-black mb-2">
-                Service Interested In
-              </label>
-              <select
-                id="service"
-                name="service"
-                value={selectedService}
-                onChange={(e) => setSelectedService(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
-              >
-                <option value="">Select a service</option>
-                <option value="starter-package">Starter Package - The Launch Pad ($200)</option>
-                <option value="pro-package">Pro Package - The Amplifier ($600)</option>
-                <option value="elite-package">Elite Package - The Empire Builder ($1200)</option>
-                <option value="commercial-advertising">Commercial Advertising</option>
-                <option value="start-podcast">Start Your Own Podcast</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-black mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black placeholder-gray-600"
-                placeholder="Tell us about your project or questions..."
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
+        <Suspense fallback={<div className="bg-white rounded-lg shadow-md p-6 sm:p-8 border"><div className="animate-pulse">Loading form...</div></div>}>
+          <ContactForm />
+        </Suspense>
       </div>
 
       {/* Studio Information */}
