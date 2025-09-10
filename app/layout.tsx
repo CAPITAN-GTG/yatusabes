@@ -34,15 +34,15 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cossette+Titre:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cossette+Titre:wght@400;700&family=Lexend+Deca:wght@100..900&family=Nabla&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
-        style={{ fontFamily: 'Open Sans, sans-serif' }}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased animated-bg`}
+        style={{ fontFamily: 'Lexend Deca, sans-serif' }}
       >
         <Navbar />
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen">
           {children}
         </main>
         <Footer />

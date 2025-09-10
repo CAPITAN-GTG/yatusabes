@@ -1,134 +1,308 @@
 "use client"
-import { Users, BookOpen, Heart, Lightbulb } from "lucide-react";
+import { Users, BookOpen, Heart, Lightbulb, ArrowRight, Star, Target, Award, Zap, Globe, TrendingUp, Handshake } from "lucide-react";
+import Image from "next/image";
 
 export default function CommunityResources() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 text-black">
-      <div className="text-center mb-8 sm:mb-12">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Community Resources</h1>
-        <p className="text-lg sm:text-xl text-black max-w-3xl mx-auto">
-          Supporting our community with valuable resources and connections
-        </p>
-      </div>
-
-      {/* Mission Statement */}
-      <div className="bg-white rounded-lg shadow-md p-6 sm:p-8 border mb-8 sm:mb-12">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">Our Community Mission</h2>
-        <div className="max-w-4xl mx-auto">
-          <p className="text-base sm:text-lg text-black leading-relaxed mb-4">
-            At YA TU SABES STUDIO, we believe in the power of community. Our mission is to amplify the voices of entrepreneurs, 
-            artists, and changemakers within our community by providing a platform for meaningful conversations and impactful storytelling.
-          </p>
-          <p className="text-base sm:text-lg text-black leading-relaxed">
-            We are dedicated to shining a spotlight on individuals making a difference, offering them the visibility and exposure 
-            they deserve through authentic interviews, community-driven dialogue, and support that fuels growth.
-          </p>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/potcast-6.webp" 
+            alt="Community Resources" 
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80"></div>
         </div>
-      </div>
+
+        {/* Subtle Moving Elements */}
+        <div className="absolute inset-0 z-5 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400/60 animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-pink-400/60 animate-bounce"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-yellow-400/60 animate-pulse"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-8 text-center lg:text-left">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                Community Resources
+              </h1>
+              <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto lg:mx-0 mb-8"></div>
+              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto lg:mx-0 mb-8">
+                Supporting our community with valuable resources and meaningful connections to help entrepreneurs, artists, and changemakers thrive.
+              </p>
+              <div className="text-lg text-gray-400 italic">
+                "This is more than just a podcast, it's a movement to uplift, empower and connect our people."
+              </div>
+            </div>
+            <div className="lg:col-span-4">
+              <div className="bg-white/10 backdrop-blur-sm p-8 text-center">
+                <div className="flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-pink-400 p-3 mr-4">
+                    <Globe className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Community Strong</h3>
+                </div>
+                <div className="text-6xl font-bold text-white mb-2" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                  <span className="bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-400 bg-clip-text text-transparent">
+                    500+
+                  </span>
+                </div>
+                <p className="text-lg text-gray-300">Active Members</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Resource Categories */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
-        <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border h-full flex flex-col text-center">
-          <div className="bg-blue-100 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Users size={24} className="text-blue-600" />
+      <section className="py-24 bg-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>How We Support You</h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto"></div>
           </div>
-          <h3 className="text-lg sm:text-xl font-semibold mb-3">Networking</h3>
-          <p className="text-black text-sm sm:text-base flex-grow">
-            Connect with local entrepreneurs, artists, and community leaders
-          </p>
-        </div>
-
-        <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border h-full flex flex-col text-center">
-          <div className="bg-blue-100 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <BookOpen size={24} className="text-blue-600" />
-          </div>
-          <h3 className="text-lg sm:text-xl font-semibold mb-3">Education</h3>
-          <p className="text-black text-sm sm:text-base flex-grow">
-            Learn from industry experts and successful community members
-          </p>
-        </div>
-
-        <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border h-full flex flex-col text-center">
-          <div className="bg-blue-100 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Heart size={24} className="text-blue-600" />
-          </div>
-          <h3 className="text-lg sm:text-xl font-semibold mb-3">Support</h3>
-          <p className="text-black text-sm sm:text-base flex-grow">
-            Get support for your business, creative projects, and community initiatives
-          </p>
-        </div>
-
-        <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border h-full flex flex-col text-center">
-          <div className="bg-blue-100 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Lightbulb size={24} className="text-blue-600" />
-          </div>
-          <h3 className="text-lg sm:text-xl font-semibold mb-3">Opportunities</h3>
-          <p className="text-black text-sm sm:text-base flex-grow">
-            Discover new opportunities for growth and collaboration
-          </p>
-        </div>
-      </div>
-
-      {/* Featured Community Members */}
-      <div className="mb-8 sm:mb-12">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">Featured Community Members</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border">
-            <div className="bg-gray-100 h-32 sm:h-40 rounded-lg mb-4 flex items-center justify-center">
-              <span className="text-gray-500 text-sm">Community Member Photo</span>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white/10 backdrop-blur-sm p-8 hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 text-center group">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Networking</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Connect with local entrepreneurs, artists, and community leaders
+              </p>
+              <div className="w-full h-0.5 bg-gradient-to-r from-cyan-400 to-transparent mt-6"></div>
             </div>
-            <h3 className="text-lg font-semibold mb-2">Local Entrepreneur</h3>
-            <p className="text-black text-sm sm:text-base">
-              Successfully launched their business with help from our community resources and podcast platform.
-            </p>
-          </div>
 
-          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border">
-            <div className="bg-gray-100 h-32 sm:h-40 rounded-lg mb-4 flex items-center justify-center">
-              <span className="text-gray-500 text-sm">Community Member Photo</span>
+            <div className="bg-white/10 backdrop-blur-sm p-8 hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 text-center group">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <BookOpen className="w-8 h-8 text-white" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Education</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Learn from industry experts and successful community members
+              </p>
+              <div className="w-full h-0.5 bg-gradient-to-r from-pink-400 to-transparent mt-6"></div>
             </div>
-            <h3 className="text-lg font-semibold mb-2">Local Artist</h3>
-            <p className="text-black text-sm sm:text-base">
-              Gained recognition and built their audience through our podcast interviews and community support.
-            </p>
-          </div>
 
-          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border sm:col-span-2 lg:col-span-1">
-            <div className="bg-gray-100 h-32 sm:h-40 rounded-lg mb-4 flex items-center justify-center">
-              <span className="text-gray-500 text-sm">Community Member Photo</span>
+            <div className="bg-white/10 backdrop-blur-sm p-8 hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 text-center group">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Heart className="w-8 h-8 text-white" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Support</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Get support for your business, creative projects, and community initiatives
+              </p>
+              <div className="w-full h-0.5 bg-gradient-to-r from-yellow-400 to-transparent mt-6"></div>
             </div>
-            <h3 className="text-lg font-semibold mb-2">Community Leader</h3>
-            <p className="text-black text-sm sm:text-base">
-              Making a difference in our community with initiatives supported by YA TU SABES STUDIO.
-            </p>
+
+            <div className="bg-white/10 backdrop-blur-sm p-8 hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 text-center group">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Lightbulb className="w-8 h-8 text-white" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Opportunities</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Discover new opportunities for growth and collaboration
+              </p>
+              <div className="w-full h-0.5 bg-gradient-to-r from-purple-400 to-transparent mt-6"></div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* How to Get Involved */}
-      <div className="bg-white rounded-lg shadow-md p-6 sm:p-8 border">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">How to Get Involved</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-blue-600">For Entrepreneurs</h3>
-            <ul className="space-y-2 text-black">
-              <li>• Share your business story on our podcast</li>
-              <li>• Connect with other local business owners</li>
-              <li>• Get featured in our community spotlight</li>
-              <li>• Access business development resources</li>
-            </ul>
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>How to Get Involved</h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto"></div>
           </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-blue-600">For Artists & Creatives</h3>
-            <ul className="space-y-2 text-black">
-              <li>• Showcase your work to a wider audience</li>
-              <li>• Collaborate with other creatives</li>
-              <li>• Get exposure through our platform</li>
-              <li>• Access creative development tools</li>
-            </ul>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="bg-white/10 backdrop-blur-sm p-10">
+              <h3 className="text-3xl font-bold mb-8 text-white flex items-center" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mr-4">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                For Entrepreneurs
+              </h3>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                    <Star size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="text-lg text-gray-300">Share your business story on our podcast</span>
+                    <div className="w-full h-0.5 bg-gradient-to-r from-cyan-400 to-transparent mt-2"></div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                    <Star size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="text-lg text-gray-300">Connect with other local business owners</span>
+                    <div className="w-full h-0.5 bg-gradient-to-r from-cyan-400 to-transparent mt-2"></div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                    <Star size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="text-lg text-gray-300">Get featured in our community spotlight</span>
+                    <div className="w-full h-0.5 bg-gradient-to-r from-cyan-400 to-transparent mt-2"></div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                    <Star size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="text-lg text-gray-300">Access business development resources</span>
+                    <div className="w-full h-0.5 bg-gradient-to-r from-cyan-400 to-transparent mt-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm p-10">
+              <h3 className="text-3xl font-bold mb-8 text-white flex items-center" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                <div className="w-12 h-12 bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center mr-4">
+                  <Heart className="w-6 h-6 text-white" />
+                </div>
+                For Artists & Creatives
+              </h3>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                    <Star size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="text-lg text-gray-300">Showcase your work to a wider audience</span>
+                    <div className="w-full h-0.5 bg-gradient-to-r from-pink-400 to-transparent mt-2"></div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                    <Star size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="text-lg text-gray-300">Collaborate with other creatives</span>
+                    <div className="w-full h-0.5 bg-gradient-to-r from-pink-400 to-transparent mt-2"></div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                    <Star size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="text-lg text-gray-300">Get exposure through our platform</span>
+                    <div className="w-full h-0.5 bg-gradient-to-r from-pink-400 to-transparent mt-2"></div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                    <Star size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="text-lg text-gray-300">Access creative development tools</span>
+                    <div className="w-full h-0.5 bg-gradient-to-r from-pink-400 to-transparent mt-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Community Impact Stats */}
+      <section className="py-24 bg-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white/10 backdrop-blur-sm p-12">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Our Community Impact</h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+                Together, we're building a stronger, more connected community where everyone has the opportunity to thrive.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mx-auto mb-6">
+                  <Users className="w-10 h-10 text-white" />
+                </div>
+                <div className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                  <span className="bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">
+                    500+
+                  </span>
+                </div>
+                <p className="text-xl text-gray-300 font-semibold">Community Members</p>
+                <div className="w-full h-0.5 bg-gradient-to-r from-cyan-400 to-transparent mt-4"></div>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center mx-auto mb-6">
+                  <Handshake className="w-10 h-10 text-white" />
+                </div>
+                <div className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                  <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                    100+
+                  </span>
+                </div>
+                <p className="text-xl text-gray-300 font-semibold">Successful Collaborations</p>
+                <div className="w-full h-0.5 bg-gradient-to-r from-pink-400 to-transparent mt-4"></div>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-r from-purple-400 to-purple-500 flex items-center justify-center mx-auto mb-6">
+                  <TrendingUp className="w-10 h-10 text-white" />
+                </div>
+                <div className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                  <span className="bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent">
+                    50+
+                  </span>
+                </div>
+                <p className="text-xl text-gray-300 font-semibold">Workshops Hosted</p>
+                <div className="w-full h-0.5 bg-gradient-to-r from-purple-400 to-transparent mt-4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+            Ready to Join Our Community?
+          </h2>
+          <p className="text-xl text-gray-300 mb-12 leading-relaxed">
+            Be part of a movement that's making a real difference. Connect, collaborate, and grow with like-minded individuals.
+          </p>
+          <a 
+            href="/pages/contact" 
+            className="bg-gradient-to-r from-cyan-400 to-pink-400 text-black px-12 py-5 font-bold hover:from-cyan-300 hover:to-pink-300 transition-all duration-300 inline-flex items-center text-xl transform hover:scale-105 shadow-lg hover:shadow-cyan-400/25"
+            style={{ fontFamily: 'Lexend Deca, sans-serif' }}
+          >
+            Get Involved <ArrowRight className="w-6 h-6 ml-3" />
+          </a>
+        </div>
+      </section>
     </div>
   );
 }
