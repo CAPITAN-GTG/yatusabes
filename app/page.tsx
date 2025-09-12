@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import { Mic, Users, Heart, Play, TrendingUp, ArrowRight, Star, Headphones, Radio, Volume2, Zap } from "lucide-react";
@@ -5,8 +6,22 @@ import { Mic, Users, Heart, Play, TrendingUp, ArrowRight, Star, Headphones, Radi
 export default function Home() {
   return (
     <div className="min-h-screen">
+      {/* Add custom font import */}
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+        .honk-<uniquifier> {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+}
+      `}</style>
+      
       {/* Fresh Creative Hero Section */}
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden font-">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image 
@@ -82,31 +97,28 @@ export default function Home() {
               <div className="lg:col-span-5 relative">
                 {/* Floating Stats Card */}
                 <div className="relative">
-                  <div className="bg-white/10 backdrop-blur-sm p-8 relative overflow-hidden transform hover:scale-105 transition-transform duration-500">
-                    {/* Gradient Background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-pink-400/5 to-yellow-400/10"></div>
-                    
+                  <div className="p-12 relative overflow-hidden transform hover:scale-105 transition-transform duration-500">
                     <div className="relative z-10 text-center">
-                      <div className="flex items-center justify-center mb-8">
-                        <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-pink-400 p-3 mr-4">
-                          <TrendingUp className="w-10 h-10 text-white" />
+                      <div className="flex items-center justify-center mb-10">
+                        <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-pink-400 p-4 mr-6">
+                          <TrendingUp className="w-12 h-12 text-white" />
                         </div>
-                        <h3 className="text-2xl font-bold text-white" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Monthly Reach</h3>
+                        <h3 className="text-3xl font-bold text-white" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Monthly Reach</h3>
                       </div>
                       
-                      <div className="text-8xl md:text-9xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                      <div className="text-9xl md:text-[12rem] font-bold text-white mb-6" style={{ fontFamily: 'Bitcount Grid Double, sans-serif' }}>
                         <span className="bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-400 bg-clip-text text-transparent">
                           100K+
                         </span>
                       </div>
                       
-                      <p className="text-xl text-gray-300 font-semibold mb-6">Listeners & Viewers</p>
+                      <p className="text-2xl text-gray-300 font-semibold mb-8">Listeners & Viewers</p>
                       
                       {/* Progress Bar */}
-                      <div className="w-full bg-gray-700 h-3">
-                        <div className="h-3 bg-gradient-to-r from-cyan-400 to-pink-400 animate-pulse" style={{ width: '85%' }}></div>
+                      <div className="w-full bg-gray-700 h-4">
+                        <div className="h-4 bg-gradient-to-r from-cyan-400 to-pink-400 animate-pulse" style={{ width: '85%' }}></div>
                       </div>
-                      <p className="text-sm text-gray-400 mt-3">Growing Strong</p>
+                      <p className="text-lg text-gray-400 mt-4">Growing Strong</p>
                     </div>
                   </div>
                   

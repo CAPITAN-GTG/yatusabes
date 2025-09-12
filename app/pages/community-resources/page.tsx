@@ -12,7 +12,7 @@ export default function CommunityResources() {
             src="/potcast-6.webp" 
             alt="Community Resources" 
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-60"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80"></div>
@@ -40,19 +40,19 @@ export default function CommunityResources() {
               </div>
             </div>
             <div className="lg:col-span-4">
-              <div className="bg-white/10 backdrop-blur-sm p-8 text-center">
-                <div className="flex items-center justify-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-pink-400 p-3 mr-4">
-                    <Globe className="w-10 h-10 text-white" />
+              <div className="p-12 text-center">
+                <div className="flex items-center justify-center mb-8">
+                  <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-pink-400 p-4 mr-6">
+                    <Globe className="w-12 h-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Community Strong</h3>
+                  <h3 className="text-3xl font-bold text-white" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Community Strong</h3>
                 </div>
-                <div className="text-6xl font-bold text-white mb-2" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                <div className="text-8xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
                   <span className="bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-400 bg-clip-text text-transparent">
                     500+
                   </span>
                 </div>
-                <p className="text-lg text-gray-300">Active Members</p>
+                <p className="text-xl text-gray-300">Active Members</p>
               </div>
             </div>
           </div>
@@ -75,10 +75,10 @@ export default function CommunityResources() {
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Networking</h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Connect with local entrepreneurs, artists, and community leaders
               </p>
-              <div className="w-full h-0.5 bg-gradient-to-r from-cyan-400 to-transparent mt-6"></div>
+              <div className="w-full h-0.5 bg-gradient-to-r from-cyan-400 to-transparent"></div>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm p-8 hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 text-center group">
@@ -88,10 +88,10 @@ export default function CommunityResources() {
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Education</h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Learn from industry experts and successful community members
               </p>
-              <div className="w-full h-0.5 bg-gradient-to-r from-pink-400 to-transparent mt-6"></div>
+              <div className="w-full h-0.5 bg-gradient-to-r from-pink-400 to-transparent"></div>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm p-8 hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 text-center group">
@@ -101,10 +101,10 @@ export default function CommunityResources() {
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Support</h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Get support for your business, creative projects, and community initiatives
               </p>
-              <div className="w-full h-0.5 bg-gradient-to-r from-yellow-400 to-transparent mt-6"></div>
+              <div className="w-full h-0.5 bg-gradient-to-r from-yellow-400 to-transparent"></div>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm p-8 hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 text-center group">
@@ -114,10 +114,10 @@ export default function CommunityResources() {
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Opportunities</h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Discover new opportunities for growth and collaboration
               </p>
-              <div className="w-full h-0.5 bg-gradient-to-r from-purple-400 to-transparent mt-6"></div>
+              <div className="w-full h-0.5 bg-gradient-to-r from-purple-400 to-transparent"></div>
             </div>
           </div>
         </div>
@@ -247,7 +247,7 @@ export default function CommunityResources() {
                   <Users className="w-10 h-10 text-white" />
                 </div>
                 <div className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
-                  <span className="bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">
+                  <span className="bg-white bg-clip-text text-transparent">
                     500+
                   </span>
                 </div>
@@ -260,7 +260,7 @@ export default function CommunityResources() {
                   <Handshake className="w-10 h-10 text-white" />
                 </div>
                 <div className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
-                  <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                  <span className="bg-white bg-clip-text text-transparent">
                     100+
                   </span>
                 </div>
@@ -273,7 +273,7 @@ export default function CommunityResources() {
                   <TrendingUp className="w-10 h-10 text-white" />
                 </div>
                 <div className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
-                  <span className="bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent">
+                  <span className="bg-white bg-clip-text text-transparent">
                     50+
                   </span>
                 </div>
@@ -296,7 +296,7 @@ export default function CommunityResources() {
           </p>
           <a 
             href="/pages/contact" 
-            className="bg-gradient-to-r from-cyan-400 to-pink-400 text-black px-12 py-5 font-bold hover:from-cyan-300 hover:to-pink-300 transition-all duration-300 inline-flex items-center text-xl transform hover:scale-105 shadow-lg hover:shadow-cyan-400/25"
+            className="bg-white text-black px-12 py-5 font-bold hover:from-cyan-300 hover:to-pink-300 transition-all duration-300 inline-flex items-center text-xl transform hover:scale-105 shadow-lg hover:shadow-cyan-400/25"
             style={{ fontFamily: 'Lexend Deca, sans-serif' }}
           >
             Get Involved <ArrowRight className="w-6 h-6 ml-3" />

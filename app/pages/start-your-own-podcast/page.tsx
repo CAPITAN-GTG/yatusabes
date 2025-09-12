@@ -12,7 +12,7 @@ export default function StartYourOwnPodcast() {
             src="/potcast-9.webp" 
             alt="Start Your Podcast" 
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-60"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80"></div>
@@ -46,19 +46,19 @@ export default function StartYourOwnPodcast() {
               </p>
             </div>
             <div className="lg:col-span-4">
-              <div className="bg-white/10 backdrop-blur-sm p-8 text-center">
-                <div className="flex items-center justify-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-pink-400 p-3 mr-4">
-                    <Mic className="w-10 h-10 text-white" />
+              <div className="p-12 text-center">
+                <div className="flex items-center justify-center mb-8">
+                  <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-pink-400 p-4 mr-6">
+                    <Mic className="w-12 h-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Launch Package</h3>
+                  <h3 className="text-4xl font-bold text-white" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Launch Package</h3>
                 </div>
-                <div className="text-6xl font-bold text-white mb-2" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                <div className="text-8xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
                   <span className="bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-400 bg-clip-text text-transparent">
                     $175
                   </span>
                 </div>
-                <p className="text-lg text-gray-300">One-time setup fee</p>
+                <p className="text-2xl text-gray-300">One-time setup fee</p>
               </div>
             </div>
           </div>
@@ -266,10 +266,10 @@ export default function StartYourOwnPodcast() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a 
               href="/pages/contact?service=start-podcast"
-              className="bg-gradient-to-r from-cyan-400 to-pink-400 text-black px-10 py-5 font-bold hover:from-cyan-300 hover:to-pink-300 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-400/25 inline-flex items-center justify-center text-lg"
+              className="bg-white text-black px-10 py-5 font-bold hover:from-cyan-300 hover:to-pink-300 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-400/25 inline-flex items-center justify-center text-lg"
               style={{ fontFamily: 'Lexend Deca, sans-serif' }}
             >
-              Get Started - $175
+              Get Started
               <ArrowRight className="w-6 h-6 ml-3" />
             </a>
             <a 

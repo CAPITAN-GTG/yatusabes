@@ -30,15 +30,14 @@ export default function PodcastPackages() {
         {/* Dynamic Package Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* Starter Package */}
-          <div className="relative group h-[750px]">
-            {/* Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="relative group max-h-[750px]">
+            {/* Decorative Squares - Keep these */}
             <div className="absolute -top-4 -left-4 w-8 h-8 border border-cyan-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute -bottom-4 -right-4 w-6 h-6 border border-cyan-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-[1.02] overflow-hidden h-full flex flex-col">
+            <div className="relative bg-white/10 border border-white/20 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-[1.02] overflow-hidden h-full flex flex-col">
               {/* Header with Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 flex-shrink-0 overflow-hidden">
                 <Image 
                   src="/potcast-7.webp" 
                   alt="Starter Package" 
@@ -49,7 +48,7 @@ export default function PodcastPackages() {
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <div className="w-12 h-12 bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/30 flex items-center justify-center mr-4">
+                      <div className="w-12 h-12 bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center mr-4">
                         <Mic className="w-6 h-6 text-cyan-400" />
                       </div>
                       <div>
@@ -65,10 +64,10 @@ export default function PodcastPackages() {
                 </div>
               </div>
 
-              <div className="p-6 flex-grow flex flex-col">
-                <p className="text-gray-300 text-sm mb-6">Perfect for individuals or small brands looking to get started</p>
+              <div className="p-6 flex-grow flex flex-col min-h-0">
+                <p className="text-gray-300 text-sm mb-6 flex-shrink-0">Perfect for individuals or small brands looking to get started</p>
                 
-                <div className="space-y-4 mb-8 flex-grow">
+                <div className="space-y-3 mb-8 flex-grow overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 pr-2 min-h-0">
                   <div className="flex items-start group/item">
                     <div className="w-6 h-6 bg-green-500/20 border border-green-400/30 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 group-hover/item:bg-green-500/30 transition-colors">
                       <CheckCircle size={14} className="text-green-400" />
@@ -97,7 +96,7 @@ export default function PodcastPackages() {
 
                 <a 
                   href="/pages/contact?service=starter-package"
-                  className="w-full bg-cyan-400 text-black py-3 px-6 font-semibold hover:bg-cyan-300 transition-all duration-300 inline-flex items-center justify-center group-hover:shadow-lg group-hover:shadow-cyan-400/25 text-sm"
+                  className="w-full bg-cyan-400 text-black py-3 px-6 font-semibold hover:bg-cyan-300 transition-all duration-300 inline-flex items-center justify-center text-sm flex-shrink-0"
                 >
                   Get Started <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -106,22 +105,21 @@ export default function PodcastPackages() {
           </div>
 
           {/* Pro Package */}
-          <div className="relative group h-[750px]">
+          <div className="relative group max-h-[750px]">
             {/* Popular Badge */}
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-              <div className="bg-pink-500 text-white px-6 py-2 text-sm font-semibold shadow-lg shadow-pink-500/25">
+              <div className="bg-pink-500 text-white px-6 py-2 text-sm font-semibold">
                 Most Popular
               </div>
             </div>
             
-            {/* Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-r from-pink-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            {/* Decorative Squares - Keep these */}
             <div className="absolute -top-4 -left-4 w-8 h-8 border border-pink-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute -bottom-4 -right-4 w-6 h-6 border border-pink-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 hover:border-pink-400/50 transition-all duration-500 hover:transform hover:scale-[1.02] overflow-hidden h-full flex flex-col">
+            <div className="relative bg-white/10 border border-white/20 hover:border-pink-400/50 transition-all duration-500 hover:transform hover:scale-[1.02] overflow-hidden h-full flex flex-col">
               {/* Header with Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 flex-shrink-0 overflow-hidden">
                 <Image 
                   src="/potcast-8.webp" 
                   alt="Pro Package" 
@@ -132,7 +130,7 @@ export default function PodcastPackages() {
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <div className="w-12 h-12 bg-pink-500/20 backdrop-blur-sm border border-pink-400/30 flex items-center justify-center mr-4">
+                      <div className="w-12 h-12 bg-pink-500/20 border border-pink-400/30 flex items-center justify-center mr-4">
                         <TrendingUp className="w-6 h-6 text-pink-400" />
                       </div>
                       <div>
@@ -148,10 +146,10 @@ export default function PodcastPackages() {
                 </div>
               </div>
 
-              <div className="p-6 flex-grow flex flex-col">
-                <p className="text-gray-300 text-sm mb-6">Enhanced visibility and reach for growing businesses</p>
+              <div className="p-6 flex-grow flex flex-col min-h-0">
+                <p className="text-gray-300 text-sm mb-6 flex-shrink-0">Enhanced visibility and reach for growing businesses</p>
                 
-                <div className="space-y-4 mb-8 flex-grow">
+                <div className="space-y-3 mb-8 flex-grow overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 pr-2 min-h-0">
                   <div className="flex items-start group/item">
                     <div className="w-6 h-6 bg-green-500/20 border border-green-400/30 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 group-hover/item:bg-green-500/30 transition-colors">
                       <CheckCircle size={14} className="text-green-400" />
@@ -186,7 +184,7 @@ export default function PodcastPackages() {
 
                 <a 
                   href="/pages/contact?service=pro-package"
-                  className="w-full bg-pink-400 text-black py-3 px-6 font-semibold hover:bg-pink-300 transition-all duration-300 inline-flex items-center justify-center group-hover:shadow-lg group-hover:shadow-pink-400/25 text-sm"
+                  className="w-full bg-pink-400 text-black py-3 px-6 font-semibold hover:bg-pink-300 transition-all duration-300 inline-flex items-center justify-center text-sm flex-shrink-0"
                 >
                   Get Started <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -195,24 +193,23 @@ export default function PodcastPackages() {
           </div>
 
           {/* Elite Package */}
-          <div className="relative group h-[750px]">
+          <div className="relative group max-h-[750px]">
             {/* Premium Badge */}
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-              <div className="bg-yellow-500 text-black px-6 py-2 text-sm font-semibold shadow-lg shadow-yellow-500/25">
+              <div className="bg-yellow-500 text-black px-6 py-2 text-sm font-semibold">
                 Premium Elite
               </div>
             </div>
             
-            {/* Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 via-purple-400/5 to-yellow-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            {/* Decorative Squares - Keep these */}
             <div className="absolute -top-4 -left-4 w-8 h-8 border border-yellow-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute -bottom-4 -right-4 w-6 h-6 border border-yellow-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute top-1/2 left-4 w-4 h-4 border border-purple-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute top-1/2 right-4 w-4 h-4 border border-purple-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 hover:border-yellow-400/50 transition-all duration-500 hover:transform hover:scale-[1.02] overflow-hidden h-full flex flex-col">
+            <div className="relative bg-white/10 border border-white/20 hover:border-yellow-400/50 transition-all duration-500 hover:transform hover:scale-[1.02] overflow-hidden h-full flex flex-col">
               {/* Header with Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 flex-shrink-0 overflow-hidden">
                 <Image 
                   src="/potcast-9.webp" 
                   alt="Elite Package" 
@@ -223,7 +220,7 @@ export default function PodcastPackages() {
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <div className="w-16 h-16 bg-yellow-500/20 backdrop-blur-sm border border-yellow-400/30 flex items-center justify-center mr-6">
+                      <div className="w-16 h-16 bg-yellow-500/20 border border-yellow-400/30 flex items-center justify-center mr-6">
                         <Star className="w-8 h-8 text-yellow-400" />
                       </div>
                       <div>
@@ -239,10 +236,11 @@ export default function PodcastPackages() {
                 </div>
               </div>
 
-              <div className="p-6 flex-grow flex flex-col">
-                <p className="text-gray-300 text-sm mb-6 text-center">Complete business growth solution with premium features</p>
+              <div className="p-6 flex-grow flex flex-col min-h-0">
+                <p className="text-gray-300 text-sm mb-6 text-center flex-shrink-0">Complete business growth solution with premium features</p>
                 
-                <div className="space-y-3 mb-8 flex-grow overflow-y-auto">
+                {/* Scrollable content area */}
+                <div className="space-y-3 mb-8 flex-grow overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 pr-2 min-h-0">
                   <div className="flex items-start group/item">
                     <div className="w-6 h-6 bg-green-500/20 border border-green-400/30 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 group-hover/item:bg-green-500/30 transition-colors">
                       <CheckCircle size={14} className="text-green-400" />
@@ -319,7 +317,7 @@ export default function PodcastPackages() {
 
                 <a 
                   href="/pages/contact?service=elite-package"
-                  className="w-full bg-yellow-400 text-black py-3 px-6 font-semibold hover:bg-yellow-300 transition-all duration-300 inline-flex items-center justify-center group-hover:shadow-lg group-hover:shadow-yellow-400/25 text-sm"
+                  className="w-full bg-yellow-400 text-black py-3 px-6 font-semibold hover:bg-yellow-300 transition-all duration-300 inline-flex items-center justify-center text-sm flex-shrink-0"
                 >
                   Get Started <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
