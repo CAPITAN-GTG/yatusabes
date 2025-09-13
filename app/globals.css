@@ -80,39 +80,41 @@ body {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 12px;
-  transition: all 0.3s ease;
+  will-change: transform;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .dark-card-hover:hover {
   background: #222222;
   border-color: var(--miami-blue);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 180, 216, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 180, 216, 0.08);
 }
 
-/* Vibrant hover effects */
+/* Optimized hover effects */
+.vibrant-hover {
+  will-change: transform;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
 .vibrant-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 180, 216, 0.15);
-  transition: all 0.3s ease;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 180, 216, 0.1);
 }
 
 .vibrant-hover-pink:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(255, 107, 157, 0.15);
-  transition: all 0.3s ease;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 107, 157, 0.1);
 }
 
 .vibrant-hover-yellow:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(255, 214, 10, 0.15);
-  transition: all 0.3s ease;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 214, 10, 0.1);
 }
 
 .vibrant-hover-purple:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(114, 9, 183, 0.15);
-  transition: all 0.3s ease;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(114, 9, 183, 0.1);
 }
 
 /* Miami-style text effects */
@@ -158,17 +160,15 @@ body {
   box-shadow: 0 0 20px rgba(255, 214, 10, 0.3);
 }
 
-/* Animated background */
+/* Optimized static background */
 .animated-bg {
-  background: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #0a0a0a, #1a1a1a);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  background-attachment: fixed;
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Custom scale utility for subtle hover effects */
+.scale-102 {
+  transform: scale(1.02);
 }
 
 /* Pulse animation for listener counter */

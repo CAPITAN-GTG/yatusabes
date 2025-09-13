@@ -35,14 +35,14 @@ export default function PodcastPackages() {
             <div className="absolute -top-4 -left-4 w-8 h-8 border border-cyan-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute -bottom-4 -right-4 w-6 h-6 border border-cyan-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <div className="relative bg-white/10 border border-white/20 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-[1.02] overflow-hidden h-full flex flex-col">
+            <div className="relative bg-white/10 border border-white/20 hover:border-cyan-400/50 transition-all duration-200 hover:transform hover:scale-102 overflow-hidden h-full flex flex-col">
               {/* Header with Image */}
               <div className="relative h-48 flex-shrink-0 overflow-hidden">
                 <Image 
                   src="/potcast-7.webp" 
                   alt="Starter Package" 
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover group-hover:scale-102 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -117,14 +117,14 @@ export default function PodcastPackages() {
             <div className="absolute -top-4 -left-4 w-8 h-8 border border-pink-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute -bottom-4 -right-4 w-6 h-6 border border-pink-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <div className="relative bg-white/10 border border-white/20 hover:border-pink-400/50 transition-all duration-500 hover:transform hover:scale-[1.02] overflow-hidden h-full flex flex-col">
+            <div className="relative bg-white/10 border border-white/20 hover:border-pink-400/50 transition-all duration-200 hover:transform hover:scale-102 overflow-hidden h-full flex flex-col">
               {/* Header with Image */}
               <div className="relative h-48 flex-shrink-0 overflow-hidden">
                 <Image 
                   src="/potcast-8.webp" 
                   alt="Pro Package" 
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover group-hover:scale-102 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -207,14 +207,14 @@ export default function PodcastPackages() {
             <div className="absolute top-1/2 left-4 w-4 h-4 border border-purple-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute top-1/2 right-4 w-4 h-4 border border-purple-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <div className="relative bg-white/10 border border-white/20 hover:border-yellow-400/50 transition-all duration-500 hover:transform hover:scale-[1.02] overflow-hidden h-full flex flex-col">
+            <div className="relative bg-white/10 border border-white/20 hover:border-yellow-400/50 transition-all duration-200 hover:transform hover:scale-102 overflow-hidden h-full flex flex-col">
               {/* Header with Image */}
               <div className="relative h-48 flex-shrink-0 overflow-hidden">
                 <Image 
                   src="/potcast-9.webp" 
                   alt="Elite Package" 
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover group-hover:scale-102 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">

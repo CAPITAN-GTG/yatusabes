@@ -6,19 +6,6 @@ import { Mic, Users, Heart, Play, TrendingUp, ArrowRight, Star, Headphones, Radi
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Add custom font import */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
-        .honk-<uniquifier> {
-  font-family: "Honk", system-ui;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "MORF" 15,
-    "SHLN" 50;
-}
-      `}</style>
       
       {/* Fresh Creative Hero Section */}
       <section className="relative min-h-screen overflow-hidden font-">

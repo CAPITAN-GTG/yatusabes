@@ -35,7 +35,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cossette+Titre:wght@400;700&family=Lexend+Deca:wght@100..900&family=Nabla&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased animated-bg`}

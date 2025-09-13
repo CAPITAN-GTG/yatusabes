@@ -18,7 +18,6 @@ export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [hoveredImage, setHoveredImage] = useState<string | null>(null);
-  const preloadTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const galleryImages = [
     { src: "/potcast-1.webp", alt: "Studio Session 1", category: "studio" },
@@ -75,46 +74,21 @@ export default function Gallery() {
     setSelectedImage(newIndex);
   }, [selectedImage, filteredImages.length]);
 
-  // Optimized hover handling with debounced preload
+  // Optimized hover handling with immediate preload
   const handleMouseEnter = useCallback((imageSrc: string) => {
     setHoveredImage(imageSrc);
     
-    // Clear any existing timeout
-    if (preloadTimeoutRef.current) {
-      clearTimeout(preloadTimeoutRef.current);
+    // Immediate preload for better UX
+    if (typeof window !== 'undefined') {
+      const img = new window.Image();
+      img.src = imageSrc;
     }
-    
-    // Only preload after user hovers for 300ms (indicating intent to click)
-    preloadTimeoutRef.current = setTimeout(() => {
-      if (typeof window !== 'undefined') {
-        // Check if image is already loaded
-        const img = new window.Image();
-        img.onload = () => {
-          // Image is now cached, no need for preload link
-        };
-        img.src = imageSrc;
-      }
-    }, 300);
   }, []);
 
   const handleMouseLeave = useCallback(() => {
     setHoveredImage(null);
-    
-    // Clear preload timeout if user leaves before 300ms
-    if (preloadTimeoutRef.current) {
-      clearTimeout(preloadTimeoutRef.current);
-      preloadTimeoutRef.current = null;
-    }
   }, []);
 
-  // Cleanup timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (preloadTimeoutRef.current) {
-        clearTimeout(preloadTimeoutRef.current);
-      }
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -204,14 +178,14 @@ const GalleryImage = ({
           alt={image.alt}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-          className={`object-cover transition-all duration-300 ${
-            isHovered ? 'scale-105' : 'scale-100'
+          className={`object-cover transition-transform duration-200 ${
+            isHovered ? 'scale-102' : 'scale-100'
           }`}
           loading={index < 4 ? "eager" : "lazy"}
           priority={index < 2}
         />
-        <div className={`absolute inset-0 border-4 transition-all duration-300 ${
-          isHovered ? 'border-white' : 'border-transparent'
+        <div className={`absolute inset-0 border-2 transition-opacity duration-200 ${
+          isHovered ? 'border-white opacity-100' : 'border-transparent opacity-0'
         }`} />
       </div>
     </div>

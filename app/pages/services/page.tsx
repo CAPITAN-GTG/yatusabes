@@ -50,7 +50,7 @@ export default function Services() {
 
               {/* Service Highlights */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105">
+                <div className="bg-white/10 border border-white/20 p-6 hover:border-cyan-400/50 transition-all duration-200 hover:transform hover:scale-102">
                   <div className="w-16 h-16 bg-cyan-500/20 flex items-center justify-center mx-auto mb-4">
                     <Mic className="w-8 h-8 text-cyan-400" />
                   </div>
@@ -58,7 +58,7 @@ export default function Services() {
                   <p className="text-gray-300 text-sm">Professional interviews starting at $200</p>
                 </div>
                 
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 hover:border-pink-400/50 transition-all duration-300 hover:transform hover:scale-105">
+                <div className="bg-white/10 border border-white/20 p-6 hover:border-pink-400/50 transition-all duration-200 hover:transform hover:scale-102">
                   <div className="w-16 h-16 bg-pink-500/20 flex items-center justify-center mx-auto mb-4">
                     <Radio className="w-8 h-8 text-pink-400" />
                   </div>
@@ -66,7 +66,7 @@ export default function Services() {
                   <p className="text-gray-300 text-sm">Radio commercials from $2,400</p>
                 </div>
                 
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105">
+                <div className="bg-white/10 border border-white/20 p-6 hover:border-purple-400/50 transition-all duration-200 hover:transform hover:scale-102">
                   <div className="w-16 h-16 bg-purple-500/20 flex items-center justify-center mx-auto mb-4">
                     <Zap className="w-8 h-8 text-purple-400" />
                   </div>
