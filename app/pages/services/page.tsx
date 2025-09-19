@@ -13,7 +13,7 @@ export default function Services() {
         {/* Animated Background */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/potcast-2.webp" 
+            src="/YTStudio-2.webp" 
             alt="Our Services" 
             fill
             className="object-cover"

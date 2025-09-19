@@ -9,7 +9,7 @@ export default function CommunityResources() {
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/potcast-6.webp" 
+            src="/YTStudio-6.webp" 
             alt="Community Resources" 
             fill
             className="object-cover opacity-60"

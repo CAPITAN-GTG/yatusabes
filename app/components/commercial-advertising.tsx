@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import CommercialAdvertisingForm from "./commercial-advertising-form";
 
 const packages = [
   {
@@ -43,13 +44,13 @@ export default function CommercialAdvertising() {
       {/* Background Image */}
       <div className="absolute inset-0 z-[5] overflow-hidden">
         <Image
-          src="/potcast-3.webp"
+          src="/YTStudio-3.webp"
           alt="Podcast Advertising"
           fill
           className="object-cover object-center opacity-20"
           priority
           placeholder="blur"
-          blurDataURL="/potcast-3.webp"
+          blurDataURL="/YTStudio-3.webp"
         />
       </div>
 
@@ -230,30 +231,11 @@ export default function CommercialAdvertising() {
           ))}
         </div>
 
-        {/* What You Need to Provide Section */}
+        {/* What You Need to Provide Section - Now with Form */}
         <div className="mb-16">
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">What You Need to Provide</h3>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="bg-gray-900/50 p-6 border border-gray-700">
-              <h4 className="text-lg md:text-xl font-semibold mb-4 text-green-400">Business Information</h4>
-              <ul className="space-y-2 text-gray-300 text-sm md:text-base">
-                <li>• Business Name & Address</li>
-                <li>• Phone Number/Email Address</li>
-                <li>• Days and Hours of Operation</li>
-                <li>• Products/Services offered</li>
-                <li>• Business Logo</li>
-              </ul>
-            </div>
-            <div className="bg-gray-900/50 p-6 border border-gray-700">
-              <h4 className="text-lg md:text-xl font-semibold mb-4 text-green-400">Advertising Details</h4>
-              <ul className="space-y-2 text-gray-300 text-sm md:text-base">
-                <li>• Short description of what you want to advertise</li>
-                <li>• Plan of action (The who, what, when, where and why)</li>
-                <li>• Target audience information</li>
-                <li>• Call to action preferences</li>
-                <li>• Any specific messaging requirements</li>
-              </ul>
-            </div>
+          <div className="max-w-4xl mx-auto">
+            <CommercialAdvertisingForm />
           </div>
         </div>
 
@@ -264,12 +246,6 @@ export default function CommercialAdvertising() {
             us help tell your story in a way that resonates with your audience.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a
-              href="/pages/contact?service=commercial-advertising"
-              className="px-8 py-4 bg-green-600 hover:bg-green-700 font-bold transition"
-            >
-              Get Started
-            </a>
             <a
               href="/pages/contact"
               className="px-8 py-4 bg-gray-800 hover:bg-gray-700 font-bold transition"

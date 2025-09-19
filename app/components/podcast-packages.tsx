@@ -39,7 +39,7 @@ export default function PodcastPackages() {
               {/* Header with Image */}
               <div className="relative h-48 flex-shrink-0 overflow-hidden">
                 <Image 
-                  src="/potcast-7.webp" 
+                  src="/YTStudio-7.webp" 
                   alt="Starter Package" 
                   fill
                   className="object-cover group-hover:scale-102 transition-transform duration-300"
@@ -121,7 +121,7 @@ export default function PodcastPackages() {
               {/* Header with Image */}
               <div className="relative h-48 flex-shrink-0 overflow-hidden">
                 <Image 
-                  src="/potcast-8.webp" 
+                  src="/YTStudio-8.webp" 
                   alt="Pro Package" 
                   fill
                   className="object-cover group-hover:scale-102 transition-transform duration-300"
@@ -211,7 +211,7 @@ export default function PodcastPackages() {
               {/* Header with Image */}
               <div className="relative h-48 flex-shrink-0 overflow-hidden">
                 <Image 
-                  src="/potcast-9.webp" 
+                  src="/YTStudio-9.webp" 
                   alt="Elite Package" 
                   fill
                   className="object-cover group-hover:scale-102 transition-transform duration-300"

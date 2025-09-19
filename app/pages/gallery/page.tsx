@@ -20,16 +20,16 @@ export default function Gallery() {
   const [hoveredImage, setHoveredImage] = useState<string | null>(null);
 
   const galleryImages = [
-    { src: "/potcast-1.webp", alt: "Studio Session 1", category: "studio" },
-    { src: "/potcast-2.webp", alt: "Interview Session", category: "interview" },
-    { src: "/potcast-3.webp", alt: "Community Event", category: "event" },
-    { src: "/potcast-4.webp", alt: "Behind the Scenes", category: "behind" },
-    { src: "/potcast-5.webp", alt: "Recording Session", category: "studio" },
-    { src: "/potcast-6.webp", alt: "Podcast Discussion", category: "interview" },
-    { src: "/potcast-7.webp", alt: "Studio Setup", category: "studio" },
-    { src: "/potcast-8.webp", alt: "Community Gathering", category: "event" },
-    { src: "/potcast-9.webp", alt: "Behind the Mic", category: "behind" },
-    { src: "/potcast-10.webp", alt: "Recording Equipment", category: "studio" },
+    { src: "/YTStudio.webp", alt: "Studio Session 1", category: "studio" },
+    { src: "/YTStudio-2.webp", alt: "Interview Session", category: "interview" },
+    { src: "/YTStudio-3.webp", alt: "Community Event", category: "event" },
+    { src: "/YTStudio-4.webp", alt: "Behind the Scenes", category: "behind" },
+    { src: "/YTStudio-5.webp", alt: "Recording Session", category: "studio" },
+    { src: "/YTStudio-6.webp", alt: "Podcast Discussion", category: "interview" },
+    { src: "/YTStudio-7.webp", alt: "Studio Setup", category: "studio" },
+    { src: "/YTStudio-8.webp", alt: "Community Gathering", category: "event" },
+    { src: "/YTStudio-9.webp", alt: "Behind the Mic", category: "behind" },
+    { src: "/YTStudio-10.webp", alt: "Recording Equipment", category: "studio" },
   ];
 
   const categories = [

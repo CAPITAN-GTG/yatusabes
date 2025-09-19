@@ -12,7 +12,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/potcast-1.webp" 
+            src="/YTStudio-16.webp" 
             alt="YA TU SABES STUDIO" 
             fill
             className="object-cover"
@@ -160,7 +160,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/potcast-2.webp" 
+            src="/YTStudio-17.webp" 
             alt="Mission Background" 
             fill
             className="object-cover opacity-15"
@@ -194,7 +194,7 @@ export default function Home() {
               <div className="relative">
                 <div className="aspect-square overflow-hidden">
                   <Image 
-                    src="/potcast-3.webp" 
+                    src="/YTStudio-17.webp" 
                     alt="Our Mission" 
                     width={600} 
                     height={600}
@@ -230,7 +230,7 @@ export default function Home() {
             <div className="bg-white/10 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 flex flex-col overflow-hidden group">
               <div className="h-48 overflow-hidden">
                 <Image 
-                  src="/potcast-7.webp" 
+                  src="/YTStudio-2.webp" 
                   alt="Podcast Packages" 
                   width={400} 
                   height={192}
@@ -258,7 +258,7 @@ export default function Home() {
             <div className="bg-white/10 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 flex flex-col overflow-hidden group">
               <div className="h-48 overflow-hidden">
                 <Image 
-                  src="/potcast-8.webp" 
+                  src="/YTStudio-6.webp" 
                   alt="Commercial Advertising" 
                   width={400} 
                   height={192}
@@ -286,7 +286,7 @@ export default function Home() {
             <div className="bg-white/10 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 flex flex-col overflow-hidden group">
               <div className="h-48 overflow-hidden">
                 <Image 
-                  src="/potcast-9.webp" 
+                  src="/YTStudio-10.webp" 
                   alt="Start Your Own Podcast" 
                   width={400} 
                   height={192}
@@ -314,7 +314,7 @@ export default function Home() {
             <div className="bg-white/10 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 flex flex-col overflow-hidden group">
               <div className="h-48 overflow-hidden">
                 <Image 
-                  src="/potcast-10.webp" 
+                  src="/YTStudio-17.webp" 
                   alt="Community Resources" 
                   width={400} 
                   height={192}
@@ -373,7 +373,7 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-square overflow-hidden">
                 <Image 
-                  src="/potcast-4.webp" 
+                  src="/YTStudio-9.webp" 
                   alt="Ready to Amplify Your Voice" 
                   width={600} 
                   height={600}
