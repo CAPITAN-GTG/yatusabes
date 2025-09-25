@@ -63,7 +63,7 @@ export default function Home() {
             {/* Main Title with BOZART Font and Gradient */}
             <div className="mb-8 relative inline-block">
               {/* Black backdrop text - offset behind */}
-              <h1 className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight absolute top-2 left-2 animate-fade-in" 
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight absolute top-2 left-2 animate-fade-in" 
                   style={{ 
                     fontFamily: 'BOZART, cursive',
                     color: '#000000',
@@ -74,7 +74,7 @@ export default function Home() {
               </h1>
               
               {/* Main gradient text */}
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight animate-fade-in relative z-10" 
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight animate-fade-in relative z-10" 
                   style={{ 
                     fontFamily: 'BOZART, cursive',
                     background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
