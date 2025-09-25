@@ -57,54 +57,56 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-black/95 border-t border-gray-800">
+        <div className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="bg-black/95 border-t border-gray-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link 
                 href="/" 
-                className="block px-3 py-2 text-white hover:text-blue-400 transition-colors duration-200 font-medium"
+                className="block px-3 py-2 text-white hover:text-blue-400 transition-colors duration-200 font-medium transform hover:translate-x-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 href="/pages/services" 
-                className="block px-3 py-2 text-white hover:text-pink-400 transition-colors duration-200 font-medium"
+                className="block px-3 py-2 text-white hover:text-pink-400 transition-colors duration-200 font-medium transform hover:translate-x-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link 
                 href="/pages/contact" 
-                className="block px-3 py-2 text-white hover:text-yellow-400 transition-colors duration-200 font-medium"
+                className="block px-3 py-2 text-white hover:text-yellow-400 transition-colors duration-200 font-medium transform hover:translate-x-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
               <Link 
                 href="/pages/community-resources" 
-                className="block px-3 py-2 text-white hover:text-purple-400 transition-colors duration-200 font-medium"
+                className="block px-3 py-2 text-white hover:text-purple-400 transition-colors duration-200 font-medium transform hover:translate-x-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Community Resources
               </Link>
               <Link 
                 href="/pages/gallery" 
-                className="block px-3 py-2 text-white hover:text-cyan-400 transition-colors duration-200 font-medium"
+                className="block px-3 py-2 text-white hover:text-cyan-400 transition-colors duration-200 font-medium transform hover:translate-x-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Gallery
               </Link>
               <Link 
                 href="/pages/start-your-own-podcast" 
-                className="block px-3 py-2 text-white hover:text-orange-400 transition-colors duration-200 font-medium"
+                className="block px-3 py-2 text-white hover:text-orange-400 transition-colors duration-200 font-medium transform hover:translate-x-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Start Your Own Podcast
               </Link>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

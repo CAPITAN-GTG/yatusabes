@@ -2,177 +2,159 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mic, Users, Heart, Play, TrendingUp, ArrowRight, Star, Headphones, Radio, Volume2, Zap } from "lucide-react";
+import { useEffect, useState } from "react";
+
+// Count-up animation component
+function CountUpAnimation({ end, duration = 2000 }: { end: number; duration?: number }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTime: number;
+    let animationFrame: number;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      setCount(Math.floor(progress * end));
+      
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [end, duration]);
+
+  return <span>{count}</span>;
+}
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       
       {/* Fresh Creative Hero Section */}
-      <section className="relative min-h-screen overflow-hidden font-">
-        {/* Background Image */}
+      <section className="relative min-h-screen overflow-hidden street-bg graffiti-texture">
+        {/* Background Video */}
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/YTStudio-16.webp" 
-            alt="YA TU SABES STUDIO" 
-            fill
-            className="object-cover"
-            priority
+          <video 
+            src="https://fs73aumn4wabpfc3.public.blob.vercel-storage.com/bg-video.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-purple-900/20 to-black/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/5 to-transparent"></div>
         </div>
 
-        {/* Subtle Moving Elements */}
-        <div className="absolute inset-0 z-5 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400/60 animate-pulse"></div>
-          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-pink-400/60 animate-bounce"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-yellow-400/60 animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-purple-400/60 animate-bounce"></div>
-        </div>
 
-        {/* Main Content - Asymmetric Layout */}
+        {/* Main Content - Centered Minimalistic Layout */}
         <div className="relative z-10 min-h-screen flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+            
+            {/* Main Title with BOZART Font and Gradient */}
+            <div className="mb-8 relative inline-block">
+              {/* Black backdrop text - offset behind */}
+              <h1 className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight absolute top-2 left-2 animate-fade-in" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    color: '#000000',
+                    zIndex: 1,
+                    whiteSpace: 'nowrap'
+                  }}>
+                YA TU SABES STUDIO
+              </h1>
               
-              {/* Left Content - Takes 7 columns */}
-              <div className="lg:col-span-7 text-center lg:text-left">
-                {/* Main Title */}
-                <div className="mb-12">
-                  <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
-                    YA TU SABES
-                  </h1>
-                  <div className="relative inline-block">
-                    <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-400" style={{ fontFamily: 'Nabla, sans-serif' }}>
-                      STUDIO
-                    </h2>
-                    <div className="absolute -bottom-3 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-400"></div>
-                  </div>
-                </div>
-                
-                {/* Mission Statement */}
-                <div className="mb-12 max-w-2xl mx-auto lg:mx-0">
-                  <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-6">
-                    Amplifying voices of entrepreneurs, artists, and changemakers in our community.
-                  </p>
-                  <div className="text-lg text-gray-400 italic">
-                    "If you're doing something real, this is your platform."
-                  </div>
-                </div>
-
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
-                  <Link 
-                    href="/pages/services" 
-                    className="group relative bg-gradient-to-r from-cyan-400 to-cyan-500 text-black px-10 py-4 font-bold hover:from-cyan-300 hover:to-cyan-400 transition-all duration-300 text-center transform hover:scale-105 shadow-lg hover:shadow-cyan-400/25"
-                    style={{ fontFamily: 'Lexend Deca, sans-serif' }}
-                  >
-                    <span className="relative z-10">View Our Services</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-300 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </Link>
-                  <Link 
-                    href="/pages/contact" 
-                    className="group relative border-2 border-white text-white px-10 py-4 font-bold hover:bg-white hover:text-black transition-all duration-300 text-center transform hover:scale-105 backdrop-blur-sm"
-                    style={{ fontFamily: 'Lexend Deca, sans-serif' }}
-                  >
-                    <span className="relative z-10">Get In Touch</span>
-                    <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </Link>
+              {/* Main gradient text */}
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight animate-fade-in relative z-10" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)',
+                    whiteSpace: 'nowrap'
+                  }}>
+                YA TU SABES STUDIO
+              </h1>
+              
+              {/* 100K Viewers Counter */}
+              <div className="mt-8 relative inline-block">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold animate-fade-in relative z-10" 
+                     style={{ 
+                       fontFamily: 'BOZART, cursive',
+                       color: '#00C3D0',
+                       filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)',
+                       whiteSpace: 'nowrap'
+                     }}>
+                  <CountUpAnimation end={100} />K VIEWERS
                 </div>
               </div>
+            </div>
 
-              {/* Right Content - Takes 5 columns with creative positioning */}
-              <div className="lg:col-span-5 relative">
-                {/* Floating Stats Card */}
-                <div className="relative">
-                  <div className="p-12 relative overflow-hidden transform hover:scale-105 transition-transform duration-500">
-                    <div className="relative z-10 text-center">
-                      <div className="flex items-center justify-center mb-10">
-                        <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-pink-400 p-4 mr-6">
-                          <TrendingUp className="w-12 h-12 text-white" />
-                        </div>
-                        <h3 className="text-3xl font-bold text-white" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Monthly Reach</h3>
-                      </div>
-                      
-                      <div className="text-9xl md:text-[12rem] font-bold text-white mb-6" style={{ fontFamily: 'Bitcount Grid Double, sans-serif' }}>
-                        <span className="bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-400 bg-clip-text text-transparent">
-                          100K+
-                        </span>
-                      </div>
-                      
-                      <p className="text-2xl text-gray-300 font-semibold mb-8">Listeners & Viewers</p>
-                      
-                      {/* Progress Bar */}
-                      <div className="w-full bg-gray-700 h-4">
-                        <div className="h-4 bg-gradient-to-r from-cyan-400 to-pink-400 animate-pulse" style={{ width: '85%' }}></div>
-                      </div>
-                      <p className="text-lg text-gray-400 mt-4">Growing Strong</p>
-                    </div>
-                  </div>
-                  
-                  {/* Floating Decorative Elements */}
-                  <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-r from-yellow-400 to-pink-400 animate-bounce opacity-60"></div>
-                  <div className="absolute -bottom-6 -left-6 w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-400 animate-pulse opacity-60"></div>
-                </div>
-              </div>
+            {/* Quote - Small White Text */}
+            <div className="mb-12 max-w-2xl mx-auto">
+              <blockquote className="text-sm md:text-base text-white leading-relaxed font-normal">
+                "If you're doing something real, this is your platform."
+              </blockquote>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/pages/services" 
+                className="group relative bg-gradient-to-r from-cyan-400 to-cyan-600 text-white px-8 py-3 font-bold hover:scale-110 transition-all duration-300 text-center transform"
+                style={{ fontFamily: 'Bungee, cursive' }}
+              >
+                <span className="relative z-10">VIEW OUR SERVICES</span>
+              </Link>
+              <Link 
+                href="/pages/contact" 
+                className="group relative border-2 border-pink-500 text-pink-500 px-8 py-3 font-bold hover:scale-110 hover:bg-pink-500 hover:text-black transition-all duration-300 text-center transform"
+                style={{ fontFamily: 'Bungee, cursive' }}
+              >
+                <span className="relative z-10">GET IN TOUCH</span>
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="w-6 h-10 border-2 border-white/50 flex justify-center">
-            <div className="w-1 h-3 bg-white/50 mt-2 animate-bounce"></div>
+          <div className="w-6 h-10 border-2 border-cyan-400 neon-glow flex justify-center">
+            <div className="w-1 h-3 bg-cyan-400 mt-2 animate-bounce"></div>
           </div>
         </div>
       </section>
 
-      {/* Trusted Partners Section */}
-      <section className="py-16 bg-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-lg font-semibold text-gray-300 uppercase tracking-wider">Trusted By</h3>
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            <div className="flex items-center justify-center w-16 h-16 bg-white/10 p-4 hover:bg-white/20 transition-colors">
-              <Users className="w-8 h-8 text-cyan-400" />
-            </div>
-            <div className="flex items-center justify-center w-16 h-16 bg-white/10 p-4 hover:bg-white/20 transition-colors">
-              <Mic className="w-8 h-8 text-pink-400" />
-            </div>
-            <div className="flex items-center justify-center w-16 h-16 bg-white/10 p-4 hover:bg-white/20 transition-colors">
-              <Radio className="w-8 h-8 text-yellow-400" />
-            </div>
-            <div className="flex items-center justify-center w-16 h-16 bg-white/10 p-4 hover:bg-white/20 transition-colors">
-              <Headphones className="w-8 h-8 text-purple-400" />
-            </div>
-            <div className="flex items-center justify-center w-16 h-16 bg-white/10 p-4 hover:bg-white/20 transition-colors">
-              <Heart className="w-8 h-8 text-red-400" />
-            </div>
-            <div className="flex items-center justify-center w-16 h-16 bg-white/10 p-4 hover:bg-white/20 transition-colors">
-              <Play className="w-8 h-8 text-green-400" />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Section Divider */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
 
       {/* Mission Section */}
-      <section className="relative py-32 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="/YTStudio-17.webp" 
-            alt="Mission Background" 
-            fill
-            className="object-cover opacity-15"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80"></div>
-        </div>
-        
+      <section className="relative py-32 bg-black">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Our Mission</h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto"></div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" 
+                style={{ 
+                  fontFamily: 'BOZART, cursive',
+                  background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                }}>
+              OUR MISSION
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-500 mx-auto"></div>
           </div>
           
           <div className="max-w-6xl mx-auto">
@@ -193,20 +175,30 @@ export default function Home() {
               {/* Right: Mission Visual */}
               <div className="relative">
                 <div className="aspect-square overflow-hidden">
-                  <Image 
-                    src="/YTStudio-17.webp" 
-                    alt="Our Mission" 
-                    width={600} 
-                    height={600}
-                    className="w-full h-full object-cover"
-                  />
+          <Image 
+            src="/studios.png" 
+            alt="Our Mission" 
+            width={1200} 
+            height={1200}
+            quality={100}
+            priority
+            className="w-full h-full object-cover"
+          />
                 </div>
               </div>
             </div>
             
             {/* Mission Statement */}
             <div className="text-center mt-20">
-              <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-400" style={{ fontFamily: 'Nabla, sans-serif' }}>
+              <div className="text-4xl md:text-5xl font-bold" 
+                   style={{ 
+                     fontFamily: 'BOZART, cursive',
+                     background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                     WebkitBackgroundClip: 'text',
+                     WebkitTextFillColor: 'transparent',
+                     backgroundClip: 'text',
+                     filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                   }}>
                 YA TU SABES!
               </div>
             </div>
@@ -214,23 +206,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-pink-500 to-transparent"></div>
+
       {/* Services Section */}
-      <section className="py-32 bg-white/5">
+      <section className="py-32 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Our Services</h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" 
+                style={{ 
+                  fontFamily: 'BOZART, cursive',
+                  background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                }}>
+              OUR SERVICES
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-200 max-w-4xl mx-auto font-medium">
               Professional podcast and advertising solutions designed to amplify your voice and grow your audience.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Podcast Packages */}
-            <div className="bg-white/10 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 flex flex-col overflow-hidden group">
+            <div className="bg-gray-900 border border-cyan-400 hover:border-cyan-300 hover:scale-105 transition-all duration-300 flex flex-col overflow-hidden group">
               <div className="h-48 overflow-hidden">
                 <Image 
-                  src="/YTStudio-2.webp" 
+                  src="/newpics-3.jpeg" 
                   alt="Podcast Packages" 
                   width={400} 
                   height={192}
@@ -240,25 +245,25 @@ export default function Home() {
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center mb-4">
                   <Mic className="w-6 h-6 text-cyan-400 mr-3" />
-                  <h3 className="text-xl font-semibold text-white">Podcast Packages</h3>
+                  <h3 className="text-xl font-bold neon-text" style={{ fontFamily: 'Bungee, cursive' }}>PODCAST PACKAGES</h3>
                 </div>
-                <p className="text-gray-300 mb-6 leading-relaxed flex-grow">
+                <p className="text-gray-200 mb-6 leading-relaxed flex-grow font-medium" style={{ fontFamily: 'Fredoka One, cursive' }}>
                   Professional podcast interviews and promotion packages starting at $200.
                 </p>
                 <Link 
                   href="/pages/services" 
-                  className="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold transition-colors"
+                  className="inline-flex items-center neon-text hover:hot-pink-text font-bold transition-colors" style={{ fontFamily: 'Righteous, cursive' }}
                 >
-                  View Packages <ArrowRight className="w-4 h-4 ml-2" />
+                  VIEW PACKAGES <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
             </div>
 
             {/* Commercial Advertising */}
-            <div className="bg-white/10 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 flex flex-col overflow-hidden group">
+            <div className="bg-gray-900 border border-pink-500 hover:border-pink-300 hover:scale-105 transition-all duration-300 flex flex-col overflow-hidden group">
               <div className="h-48 overflow-hidden">
                 <Image 
-                  src="/YTStudio-6.webp" 
+                  src="/newpics-4.jpeg" 
                   alt="Commercial Advertising" 
                   width={400} 
                   height={192}
@@ -268,25 +273,25 @@ export default function Home() {
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center mb-4">
                   <Volume2 className="w-6 h-6 text-pink-400 mr-3" />
-                  <h3 className="text-xl font-semibold text-white">Commercial Advertising</h3>
+                  <h3 className="text-xl font-bold hot-pink-text" style={{ fontFamily: 'Bungee, cursive' }}>COMMERCIAL ADVERTISING</h3>
                 </div>
-                <p className="text-gray-300 mb-6 leading-relaxed flex-grow">
+                <p className="text-gray-200 mb-6 leading-relaxed flex-grow font-medium" style={{ fontFamily: 'Fredoka One, cursive' }}>
                   Professional radio commercials and advertising solutions for maximum reach.
                 </p>
                 <Link 
                   href="/pages/services" 
-                  className="inline-flex items-center text-pink-400 hover:text-pink-300 font-semibold transition-colors"
+                  className="inline-flex items-center hot-pink-text hover:neon-text font-bold transition-colors" style={{ fontFamily: 'Righteous, cursive' }}
                 >
-                  Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                  LEARN MORE <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
             </div>
 
             {/* Start Your Own Podcast */}
-            <div className="bg-white/10 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 flex flex-col overflow-hidden group">
+            <div className="bg-gray-900 border border-purple-500 hover:border-purple-300 hover:scale-105 transition-all duration-300 flex flex-col overflow-hidden group">
               <div className="h-48 overflow-hidden">
                 <Image 
-                  src="/YTStudio-10.webp" 
+                  src="/newpics-5.jpeg" 
                   alt="Start Your Own Podcast" 
                   width={400} 
                   height={192}
@@ -296,25 +301,25 @@ export default function Home() {
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center mb-4">
                   <Zap className="w-6 h-6 text-purple-400 mr-3" />
-                  <h3 className="text-xl font-semibold text-white">Start Your Own Podcast</h3>
+                  <h3 className="text-xl font-bold text-purple-400" style={{ fontFamily: 'Bungee, cursive', textShadow: '0 0 3px rgba(138, 43, 226, 0.4)' }}>START YOUR OWN PODCAST</h3>
                 </div>
-                <p className="text-gray-300 mb-6 leading-relaxed flex-grow">
+                <p className="text-gray-200 mb-6 leading-relaxed flex-grow font-medium" style={{ fontFamily: 'Fredoka One, cursive' }}>
                   Create your podcast with our one-time setup fee of $175. No contracts required.
                 </p>
                 <Link 
                   href="/pages/start-your-own-podcast" 
-                  className="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold transition-colors"
+                  className="inline-flex items-center text-purple-400 hover:neon-text font-bold transition-colors" style={{ fontFamily: 'Righteous, cursive', textShadow: '0 0 2px rgba(138, 43, 226, 0.3)' }}
                 >
-                  Get Started <ArrowRight className="w-4 h-4 ml-2" />
+                  GET STARTED <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
             </div>
 
             {/* Community Resources */}
-            <div className="bg-white/10 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 flex flex-col overflow-hidden group">
+            <div className="bg-gray-900 border border-yellow-400 hover:border-yellow-300 hover:scale-105 transition-all duration-300 flex flex-col overflow-hidden group">
               <div className="h-48 overflow-hidden">
                 <Image 
-                  src="/YTStudio-17.webp" 
+                  src="/newpics-6.jpeg" 
                   alt="Community Resources" 
                   width={400} 
                   height={192}
@@ -324,16 +329,16 @@ export default function Home() {
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center mb-4">
                   <Heart className="w-6 h-6 text-yellow-400 mr-3" />
-                  <h3 className="text-xl font-semibold text-white">Community Resources</h3>
+                  <h3 className="text-xl font-bold text-yellow-400" style={{ fontFamily: 'Bungee, cursive', textShadow: '0 0 3px rgba(204, 255, 0, 0.4)' }}>COMMUNITY RESOURCES</h3>
                 </div>
-                <p className="text-gray-300 mb-6 leading-relaxed flex-grow">
+                <p className="text-gray-200 mb-6 leading-relaxed flex-grow font-medium" style={{ fontFamily: 'Fredoka One, cursive' }}>
                   Supporting our community with valuable resources and meaningful connections.
                 </p>
                 <Link 
                   href="/pages/community-resources" 
-                  className="inline-flex items-center text-yellow-400 hover:text-yellow-300 font-semibold transition-colors"
+                  className="inline-flex items-center text-yellow-400 hover:hot-pink-text font-bold transition-colors" style={{ fontFamily: 'Righteous, cursive', textShadow: '0 0 2px rgba(204, 255, 0, 0.3)' }}
                 >
-                  Explore <ArrowRight className="w-4 h-4 ml-2" />
+                  EXPLORE <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
             </div>
@@ -341,44 +346,120 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
+
       {/* CTA Section */}
-      <section className="py-32 bg-white/5">
+      <section className="py-32 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Content */}
             <div className="space-y-8">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
-                Ready to Amplify Your Voice?
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                  }}>
+                READY TO AMPLIFY YOUR VOICE?
               </h2>
-              <p className="text-xl text-gray-300 leading-relaxed">
+              <p className="text-xl text-gray-200 leading-relaxed font-medium">
                 Join the movement of entrepreneurs, artists, and changemakers making a real impact in our community.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   href="/pages/services" 
-                  className="bg-cyan-400 text-black px-8 py-4 font-semibold hover:bg-cyan-300 transition-all duration-300 text-center"
+                  className="bg-gradient-to-r from-cyan-400 to-cyan-600 text-white px-8 py-4 font-bold hover:scale-105 transition-all duration-300 text-center rounded"
+                  style={{ fontFamily: 'Bungee, cursive' }}
                 >
-                  View Our Services
+                  VIEW OUR SERVICES
                 </Link>
                 <Link 
                   href="/pages/contact" 
-                  className="border-2 border-white text-white px-8 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300 text-center"
+                  className="border-2 border-pink-500 text-pink-500 px-8 py-4 font-bold hover:bg-pink-500 hover:text-black transition-all duration-300 text-center rounded"
+                  style={{ fontFamily: 'Bungee, cursive' }}
                 >
-                  Get In Touch
+                  GET IN TOUCH
                 </Link>
               </div>
             </div>
 
             {/* Right: Visual */}
             <div className="relative">
-              <div className="aspect-square overflow-hidden">
-                <Image 
-                  src="/YTStudio-9.webp" 
-                  alt="Ready to Amplify Your Voice" 
-                  width={600} 
-                  height={600}
-                  className="w-full h-full object-cover"
-                />
+                <div className="aspect-square overflow-hidden">
+                  <Image 
+                    src="/newpics-12.jpg" 
+                    alt="Ready to Amplify Your Voice" 
+                    width={1900} 
+                    height={1900}
+                    quality={100}
+                    priority
+                    className="w-full h-full object-cover rounded-tr-full rounded-tl-full"
+                  />
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Divider */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-pink-500 to-transparent"></div>
+
+      {/* Sponsors Section */}
+      <section className="py-16 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h3 className="text-lg font-bold text-cyan-400 uppercase tracking-wider" style={{ fontFamily: 'Bungee, cursive' }}>SPONSORS</h3>
+          </div>
+          
+          {/* Infinite Carousel */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll">
+              {/* First set of sponsors */}
+              <div className="flex items-center gap-8 md:gap-12 flex-shrink-0">
+                <div className="flex items-center justify-center w-16 h-16 bg-gray-800 p-4 hover:bg-gray-700 hover:scale-105 transition-all duration-300 border border-cyan-400 rounded">
+                  <Users className="w-8 h-8 text-cyan-400" />
+                </div>
+                <div className="flex items-center justify-center w-16 h-16 bg-gray-800 p-4 hover:bg-gray-700 hover:scale-105 transition-all duration-300 border border-pink-500 rounded">
+                  <Mic className="w-8 h-8 text-pink-400" />
+                </div>
+                <div className="flex items-center justify-center w-16 h-16 bg-gray-800 p-4 hover:bg-gray-700 hover:scale-105 transition-all duration-300 border border-yellow-400 rounded">
+                  <Radio className="w-8 h-8 text-yellow-400" />
+                </div>
+                <div className="flex items-center justify-center w-16 h-16 bg-gray-800 p-4 hover:bg-gray-700 hover:scale-105 transition-all duration-300 border border-purple-500 rounded">
+                  <Headphones className="w-8 h-8 text-purple-400" />
+                </div>
+                <div className="flex items-center justify-center w-16 h-16 bg-gray-800 p-4 hover:bg-gray-700 hover:scale-105 transition-all duration-300 border border-red-400 rounded">
+                  <Heart className="w-8 h-8 text-red-400" />
+                </div>
+                <div className="flex items-center justify-center w-16 h-16 bg-gray-800 p-4 hover:bg-gray-700 hover:scale-105 transition-all duration-300 border border-green-400 rounded">
+                  <Play className="w-8 h-8 text-green-400" />
+                </div>
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              <div className="flex items-center gap-8 md:gap-12 flex-shrink-0">
+                <div className="flex items-center justify-center w-16 h-16 bg-gray-800 p-4 hover:bg-gray-700 hover:scale-105 transition-all duration-300 border border-cyan-400 rounded">
+                  <Users className="w-8 h-8 text-cyan-400" />
+                </div>
+                <div className="flex items-center justify-center w-16 h-16 bg-gray-800 p-4 hover:bg-gray-700 hover:scale-105 transition-all duration-300 border border-pink-500 rounded">
+                  <Mic className="w-8 h-8 text-pink-400" />
+                </div>
+                <div className="flex items-center justify-center w-16 h-16 bg-gray-800 p-4 hover:bg-gray-700 hover:scale-105 transition-all duration-300 border border-yellow-400 rounded">
+                  <Radio className="w-8 h-8 text-yellow-400" />
+                </div>
+                <div className="flex items-center justify-center w-16 h-16 bg-gray-800 p-4 hover:bg-gray-700 hover:scale-105 transition-all duration-300 border border-purple-500 rounded">
+                  <Headphones className="w-8 h-8 text-purple-400" />
+                </div>
+                <div className="flex items-center justify-center w-16 h-16 bg-gray-800 p-4 hover:bg-gray-700 hover:scale-105 transition-all duration-300 border border-red-400 rounded">
+                  <Heart className="w-8 h-8 text-red-400" />
+                </div>
+                <div className="flex items-center justify-center w-16 h-16 bg-gray-800 p-4 hover:bg-gray-700 hover:scale-105 transition-all duration-300 border border-green-400 rounded">
+                  <Play className="w-8 h-8 text-green-400" />
+                </div>
               </div>
             </div>
           </div>

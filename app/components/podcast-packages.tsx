@@ -35,11 +35,11 @@ export default function PodcastPackages() {
             <div className="absolute -top-4 -left-4 w-8 h-8 border border-cyan-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute -bottom-4 -right-4 w-6 h-6 border border-cyan-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <div className="relative bg-white/10 border border-white/20 hover:border-cyan-400/50 transition-all duration-200 hover:transform hover:scale-102 overflow-hidden h-full flex flex-col">
+            <div className="relative bg-black border border-white/20 hover:border-cyan-400/50 transition-all duration-200 hover:transform hover:scale-102 overflow-hidden h-full flex flex-col">
               {/* Header with Image */}
               <div className="relative h-48 flex-shrink-0 overflow-hidden">
                 <Image 
-                  src="/YTStudio-7.webp" 
+                  src="/newpics-15.jpg" 
                   alt="Starter Package" 
                   fill
                   className="object-cover group-hover:scale-102 transition-transform duration-300"
@@ -96,7 +96,7 @@ export default function PodcastPackages() {
 
                 <a 
                   href="/pages/contact?service=starter-package"
-                  className="w-full bg-cyan-400 text-black py-3 px-6 font-semibold hover:bg-cyan-300 transition-all duration-300 inline-flex items-center justify-center text-sm flex-shrink-0"
+                  className="w-full bg-cyan-400 text-white py-3 px-6 font-bold hover:bg-white hover:text-cyan-400 transition-all duration-300 inline-flex items-center justify-center text-sm flex-shrink-0 border-2 border-cyan-400"
                 >
                   Get Started <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -117,12 +117,12 @@ export default function PodcastPackages() {
             <div className="absolute -top-4 -left-4 w-8 h-8 border border-pink-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute -bottom-4 -right-4 w-6 h-6 border border-pink-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <div className="relative bg-white/10 border border-white/20 hover:border-pink-400/50 transition-all duration-200 hover:transform hover:scale-102 overflow-hidden h-full flex flex-col">
+            <div className="relative bg-black border border-white/20 hover:border-pink-400/50 transition-all duration-200 hover:transform hover:scale-102 overflow-hidden h-full flex flex-col">
               {/* Header with Image */}
               <div className="relative h-48 flex-shrink-0 overflow-hidden">
                 <Image 
-                  src="/YTStudio-8.webp" 
-                  alt="Pro Package" 
+                  src="/newpics-12.jpg" 
+                  alt="Pro Package"
                   fill
                   className="object-cover group-hover:scale-102 transition-transform duration-300"
                 />
@@ -184,7 +184,7 @@ export default function PodcastPackages() {
 
                 <a 
                   href="/pages/contact?service=pro-package"
-                  className="w-full bg-pink-400 text-black py-3 px-6 font-semibold hover:bg-pink-300 transition-all duration-300 inline-flex items-center justify-center text-sm flex-shrink-0"
+                  className="w-full bg-pink-500 text-white py-3 px-6 font-bold hover:bg-white hover:text-pink-500 transition-all duration-300 inline-flex items-center justify-center text-sm flex-shrink-0 border-2 border-pink-500"
                 >
                   Get Started <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -207,11 +207,11 @@ export default function PodcastPackages() {
             <div className="absolute top-1/2 left-4 w-4 h-4 border border-purple-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute top-1/2 right-4 w-4 h-4 border border-purple-400/30 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <div className="relative bg-white/10 border border-white/20 hover:border-yellow-400/50 transition-all duration-200 hover:transform hover:scale-102 overflow-hidden h-full flex flex-col">
+            <div className="relative bg-black border border-white/20 hover:border-yellow-400/50 transition-all duration-200 hover:transform hover:scale-102 overflow-hidden h-full flex flex-col">
               {/* Header with Image */}
               <div className="relative h-48 flex-shrink-0 overflow-hidden">
                 <Image 
-                  src="/YTStudio-9.webp" 
+                  src="/newpics-13.jpg" 
                   alt="Elite Package" 
                   fill
                   className="object-cover group-hover:scale-102 transition-transform duration-300"
@@ -317,7 +317,7 @@ export default function PodcastPackages() {
 
                 <a 
                   href="/pages/contact?service=elite-package"
-                  className="w-full bg-yellow-400 text-black py-3 px-6 font-semibold hover:bg-yellow-300 transition-all duration-300 inline-flex items-center justify-center text-sm flex-shrink-0"
+                  className="w-full bg-yellow-500 text-white py-3 px-6 font-bold hover:bg-white hover:text-yellow-500 transition-all duration-300 inline-flex items-center justify-center text-sm flex-shrink-0 border-2 border-yellow-500"
                 >
                   Get Started <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>

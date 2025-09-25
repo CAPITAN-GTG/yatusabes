@@ -1,6 +1,38 @@
 "use client"
 import { Users, BookOpen, Heart, Lightbulb, ArrowRight, Star, Target, Award, Zap, Globe, TrendingUp, Handshake } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+// Count-up animation component
+function CountUpAnimation({ end, duration = 2000 }: { end: number; duration?: number }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTime: number;
+    let animationFrame: number;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      setCount(Math.floor(progress * end));
+      
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [end, duration]);
+
+  return <span>{count}+</span>;
+}
 
 export default function CommunityResources() {
   return (
@@ -9,7 +41,7 @@ export default function CommunityResources() {
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/YTStudio-6.webp" 
+            src="/newpics-11.jpeg" 
             alt="Community Resources" 
             fill
             className="object-cover opacity-60"
@@ -28,7 +60,15 @@ export default function CommunityResources() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-8 text-center lg:text-left">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                  }}>
                 Community Resources
               </h1>
               <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto lg:mx-0 mb-8"></div>
@@ -45,12 +85,28 @@ export default function CommunityResources() {
                   <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-pink-400 p-4 mr-6">
                     <Globe className="w-12 h-12 text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Community Strong</h3>
+                  <h3 className="text-3xl font-bold text-white" 
+                      style={{ 
+                        fontFamily: 'BOZART, cursive',
+                        background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                        filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                      }}>
+                    Community Strong
+                  </h3>
                 </div>
-                <div className="text-8xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
-                  <span className="bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-400 bg-clip-text text-transparent">
-                    500+
-                  </span>
+                <div className="text-8xl font-bold text-white mb-4" 
+                     style={{ 
+                       fontFamily: 'BOZART, cursive',
+                       background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                       WebkitBackgroundClip: 'text',
+                       WebkitTextFillColor: 'transparent',
+                       backgroundClip: 'text',
+                       filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                     }}>
+                  <CountUpAnimation end={500} />
                 </div>
                 <p className="text-xl text-gray-300">Active Members</p>
               </div>
@@ -63,7 +119,17 @@ export default function CommunityResources() {
       <section className="py-24 bg-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>How We Support You</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" 
+                style={{ 
+                  fontFamily: 'BOZART, cursive',
+                  background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                }}>
+              How We Support You
+            </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto"></div>
           </div>
           
@@ -74,7 +140,17 @@ export default function CommunityResources() {
                   <Users className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Networking</h3>
+              <h3 className="text-2xl font-bold text-white mb-4" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                  }}>
+                Networking
+              </h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Connect with local entrepreneurs, artists, and community leaders
               </p>
@@ -87,7 +163,17 @@ export default function CommunityResources() {
                   <BookOpen className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Education</h3>
+              <h3 className="text-2xl font-bold text-white mb-4" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                  }}>
+                Education
+              </h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Learn from industry experts and successful community members
               </p>
@@ -100,7 +186,17 @@ export default function CommunityResources() {
                   <Heart className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Support</h3>
+              <h3 className="text-2xl font-bold text-white mb-4" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                  }}>
+                Support
+              </h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Get support for your business, creative projects, and community initiatives
               </p>
@@ -113,7 +209,17 @@ export default function CommunityResources() {
                   <Lightbulb className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Opportunities</h3>
+              <h3 className="text-2xl font-bold text-white mb-4" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                  }}>
+                Opportunities
+              </h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Discover new opportunities for growth and collaboration
               </p>
@@ -127,13 +233,31 @@ export default function CommunityResources() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>How to Get Involved</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" 
+                style={{ 
+                  fontFamily: 'BOZART, cursive',
+                  background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                }}>
+              How to Get Involved
+            </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto"></div>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div className="bg-white/10 backdrop-blur-sm p-10">
-              <h3 className="text-3xl font-bold mb-8 text-white flex items-center" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+              <h3 className="text-3xl font-bold mb-8 text-white flex items-center" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                  }}>
                 <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mr-4">
                   <Target className="w-6 h-6 text-white" />
                 </div>
@@ -180,7 +304,15 @@ export default function CommunityResources() {
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm p-10">
-              <h3 className="text-3xl font-bold mb-8 text-white flex items-center" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+              <h3 className="text-3xl font-bold mb-8 text-white flex items-center" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                  }}>
                 <div className="w-12 h-12 bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center mr-4">
                   <Heart className="w-6 h-6 text-white" />
                 </div>
@@ -234,7 +366,17 @@ export default function CommunityResources() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white/10 backdrop-blur-sm p-12">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Our Community Impact</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                  }}>
+                Our Community Impact
+              </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto mb-8"></div>
               <p className="text-xl text-gray-300 max-w-4xl mx-auto">
                 Together, we're building a stronger, more connected community where everyone has the opportunity to thrive.
@@ -246,10 +388,16 @@ export default function CommunityResources() {
                 <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mx-auto mb-6">
                   <Users className="w-10 h-10 text-white" />
                 </div>
-                <div className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
-                  <span className="bg-white bg-clip-text text-transparent">
-                    500+
-                  </span>
+                <div className="text-5xl md:text-6xl font-bold text-white mb-4" 
+                     style={{ 
+                       fontFamily: 'BOZART, cursive',
+                       background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                       WebkitBackgroundClip: 'text',
+                       WebkitTextFillColor: 'transparent',
+                       backgroundClip: 'text',
+                       filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                     }}>
+                  <CountUpAnimation end={500} />
                 </div>
                 <p className="text-xl text-gray-300 font-semibold">Community Members</p>
                 <div className="w-full h-0.5 bg-gradient-to-r from-cyan-400 to-transparent mt-4"></div>
@@ -259,10 +407,16 @@ export default function CommunityResources() {
                 <div className="w-20 h-20 bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center mx-auto mb-6">
                   <Handshake className="w-10 h-10 text-white" />
                 </div>
-                <div className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
-                  <span className="bg-white bg-clip-text text-transparent">
-                    100+
-                  </span>
+                <div className="text-5xl md:text-6xl font-bold text-white mb-4" 
+                     style={{ 
+                       fontFamily: 'BOZART, cursive',
+                       background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                       WebkitBackgroundClip: 'text',
+                       WebkitTextFillColor: 'transparent',
+                       backgroundClip: 'text',
+                       filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                     }}>
+                  <CountUpAnimation end={100} />
                 </div>
                 <p className="text-xl text-gray-300 font-semibold">Successful Collaborations</p>
                 <div className="w-full h-0.5 bg-gradient-to-r from-pink-400 to-transparent mt-4"></div>
@@ -272,10 +426,16 @@ export default function CommunityResources() {
                 <div className="w-20 h-20 bg-gradient-to-r from-purple-400 to-purple-500 flex items-center justify-center mx-auto mb-6">
                   <TrendingUp className="w-10 h-10 text-white" />
                 </div>
-                <div className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
-                  <span className="bg-white bg-clip-text text-transparent">
-                    50+
-                  </span>
+                <div className="text-5xl md:text-6xl font-bold text-white mb-4" 
+                     style={{ 
+                       fontFamily: 'BOZART, cursive',
+                       background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                       WebkitBackgroundClip: 'text',
+                       WebkitTextFillColor: 'transparent',
+                       backgroundClip: 'text',
+                       filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                     }}>
+                  <CountUpAnimation end={50} />
                 </div>
                 <p className="text-xl text-gray-300 font-semibold">Workshops Hosted</p>
                 <div className="w-full h-0.5 bg-gradient-to-r from-purple-400 to-transparent mt-4"></div>
@@ -288,7 +448,15 @@ export default function CommunityResources() {
       {/* CTA Section */}
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8" 
+              style={{ 
+                fontFamily: 'BOZART, cursive',
+                background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+              }}>
             Ready to Join Our Community?
           </h2>
           <p className="text-xl text-gray-300 mb-12 leading-relaxed">

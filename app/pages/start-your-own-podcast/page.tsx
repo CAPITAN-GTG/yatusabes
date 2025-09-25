@@ -1,6 +1,30 @@
 "use client"
 import { Mic, Clock, DollarSign, CheckCircle, Star, ArrowRight, Play, Headphones, Zap, Users, Award } from "lucide-react";
 import Image from "next/image";
+import { useState, useEffect } from 'react';
+
+// CountUp Animation Component
+const CountUpAnimation = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    let startTime: number;
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      setCount(Math.floor(easeOutQuart * end));
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    
+    requestAnimationFrame(animate);
+  }, [end, duration]);
+  
+  return <span>{count}</span>;
+};
 
 export default function StartYourOwnPodcast() {
   return (
@@ -9,7 +33,7 @@ export default function StartYourOwnPodcast() {
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/YTStudio-9.webp" 
+            src="/newpics-9.jpeg" 
             alt="Start Your Podcast" 
             fill
             className="object-cover opacity-60"
@@ -29,15 +53,17 @@ export default function StartYourOwnPodcast() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-8 text-center lg:text-left">
               <div className="flex justify-center lg:justify-start mb-8">
-                <Image 
-                  src="/studios.png" 
-                  alt="YA TU SABES STUDIO Logo" 
-                  width={120} 
-                  height={120}
-                  className="shadow-2xl"
-                />
+                
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                  }}>
                 Start Your Own Podcast
               </h1>
               <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto lg:mx-0 mb-8"></div>
@@ -51,12 +77,26 @@ export default function StartYourOwnPodcast() {
                   <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-pink-400 p-4 mr-6">
                     <Mic className="w-12 h-12 text-white" />
                   </div>
-                  <h3 className="text-4xl font-bold text-white" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Launch Package</h3>
+                  <h3 className="text-4xl font-bold text-white" 
+                      style={{ 
+                        fontFamily: 'BOZART, cursive',
+                        background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                        filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                      }}>Launch Package</h3>
                 </div>
-                <div className="text-8xl font-bold text-white mb-4" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
-                  <span className="bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-400 bg-clip-text text-transparent">
-                    $175
-                  </span>
+                <div className="text-8xl font-bold mb-4" 
+                     style={{ 
+                       fontFamily: 'BOZART, cursive',
+                       background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                       WebkitBackgroundClip: 'text',
+                       WebkitTextFillColor: 'transparent',
+                       backgroundClip: 'text',
+                       filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                     }}>
+                  $<CountUpAnimation end={175} />
                 </div>
                 <p className="text-2xl text-gray-300">One-time setup fee</p>
               </div>
@@ -66,15 +106,33 @@ export default function StartYourOwnPodcast() {
       </section>
 
       {/* Main Package */}
-      <section className="py-24 bg-white/5">
+      <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/10 backdrop-blur-sm p-12">
+          <div className="bg-gray-900 p-12">
             <div className="text-center mb-16">
               <div className="inline-block bg-gradient-to-r from-cyan-400 to-cyan-500 text-black py-3 px-8 font-bold mb-6" style={{ fontFamily: 'Lexend Deca, sans-serif' }}>
                 One Time Setup Fee
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Podcast Launch Package</h2>
-              <div className="text-7xl font-bold text-cyan-400 mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>$175</div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" 
+                  style={{ 
+                    fontFamily: 'BOZART, cursive',
+                    background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                  }}>Podcast Launch Package</h2>
+              <div className="text-7xl font-bold mb-6" 
+                   style={{ 
+                     fontFamily: 'BOZART, cursive',
+                     background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                     WebkitBackgroundClip: 'text',
+                     WebkitTextFillColor: 'transparent',
+                     backgroundClip: 'text',
+                     filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                   }}>
+                $<CountUpAnimation end={175} />
+              </div>
               <p className="text-xl text-gray-300">Everything you need to get started</p>
             </div>
 
@@ -118,7 +176,15 @@ export default function StartYourOwnPodcast() {
               </div>
               
               <div>
-                <h3 className="text-3xl font-bold mb-8 text-white flex items-center" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                <h3 className="text-3xl font-bold mb-8 text-white flex items-center" 
+                    style={{ 
+                      fontFamily: 'BOZART, cursive',
+                      background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                    }}>
                   <div className="w-12 h-12 bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center mr-4">
                     <Star className="w-6 h-6 text-white" />
                   </div>
@@ -151,34 +217,78 @@ export default function StartYourOwnPodcast() {
       </section>
 
       {/* Studio Time Pricing */}
-      <section className="py-24">
+      <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Studio Time Fees</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" 
+                style={{ 
+                  fontFamily: 'BOZART, cursive',
+                  background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                }}>Studio Time Fees</h2>
             <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto"></div>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-white/10 backdrop-blur-sm p-10 hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 group">
+            <div className="bg-gray-900 p-10 hover:bg-gray-800 transition-all duration-300 hover:transform hover:scale-105 group">
               <div className="flex items-center mb-8">
                 <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center mr-6 group-hover:scale-110 transition-transform">
                   <Clock className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-white" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>1 Hour Session</h3>
+                <h3 className="text-3xl font-bold text-white" 
+                    style={{ 
+                      fontFamily: 'BOZART, cursive',
+                      background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                    }}>1 Hour Session</h3>
               </div>
-              <div className="text-6xl font-bold text-cyan-400 mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>$125</div>
+              <div className="text-6xl font-bold mb-6" 
+                   style={{ 
+                     fontFamily: 'BOZART, cursive',
+                     background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                     WebkitBackgroundClip: 'text',
+                     WebkitTextFillColor: 'transparent',
+                     backgroundClip: 'text',
+                     filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                   }}>
+                $<CountUpAnimation end={125} />
+              </div>
               <p className="text-lg text-gray-300 leading-relaxed">Perfect for shorter interviews or focused content creation</p>
               <div className="w-full h-0.5 bg-gradient-to-r from-cyan-400 to-transparent mt-6"></div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm p-10 hover:bg-white/15 transition-all duration-300 hover:transform hover:scale-105 group">
+            <div className="bg-gray-900 p-10 hover:bg-gray-800 transition-all duration-300 hover:transform hover:scale-105 group">
               <div className="flex items-center mb-8">
                 <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center mr-6 group-hover:scale-110 transition-transform">
                   <Clock className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-white" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>2 Hour Session</h3>
+                <h3 className="text-3xl font-bold text-white" 
+                    style={{ 
+                      fontFamily: 'BOZART, cursive',
+                      background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                    }}>2 Hour Session</h3>
               </div>
-              <div className="text-6xl font-bold text-pink-400 mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>$175</div>
+              <div className="text-6xl font-bold mb-6" 
+                   style={{ 
+                     fontFamily: 'BOZART, cursive',
+                     background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                     WebkitBackgroundClip: 'text',
+                     WebkitTextFillColor: 'transparent',
+                     backgroundClip: 'text',
+                     filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                   }}>
+                $<CountUpAnimation end={175} />
+              </div>
               <p className="text-lg text-gray-300 leading-relaxed">Ideal for longer interviews, multiple segments, or detailed discussions</p>
               <div className="w-full h-0.5 bg-gradient-to-r from-pink-400 to-transparent mt-6"></div>
             </div>
@@ -187,10 +297,18 @@ export default function StartYourOwnPodcast() {
       </section>
 
       {/* What's Included in Studio Time */}
-      <section className="py-24 bg-white/5">
+      <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/10 backdrop-blur-sm p-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 text-center" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Studio Time Includes</h2>
+          <div className="bg-gray-900 p-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 text-center" 
+                style={{ 
+                  fontFamily: 'BOZART, cursive',
+                  background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+                }}>Studio Time Includes</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="flex items-start group">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-green-500 flex items-center justify-center mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -257,9 +375,17 @@ export default function StartYourOwnPodcast() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24">
+      <section className="py-24 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Ready to Launch Your Podcast?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8" 
+              style={{ 
+                fontFamily: 'BOZART, cursive',
+                background: 'linear-gradient(to bottom, #00ffff, #ff1493)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                filter: 'drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff)'
+              }}>Ready to Launch Your Podcast?</h2>
           <p className="text-xl text-gray-300 mb-12 leading-relaxed">
             Take the first step towards sharing your voice with the world
           </p>

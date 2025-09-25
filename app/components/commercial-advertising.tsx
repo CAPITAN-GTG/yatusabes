@@ -44,13 +44,13 @@ export default function CommercialAdvertising() {
       {/* Background Image */}
       <div className="absolute inset-0 z-[5] overflow-hidden">
         <Image
-          src="/YTStudio-3.webp"
+          src="/newpics-8.jpeg"
           alt="Podcast Advertising"
           fill
           className="object-cover object-center opacity-20"
           priority
           placeholder="blur"
-          blurDataURL="/YTStudio-3.webp"
+          blurDataURL="/newpics-8.jpeg"
         />
       </div>
 
@@ -95,12 +95,14 @@ export default function CommercialAdvertising() {
                   className="border-b border-gray-700 hover:bg-green-900/30 transition"
                 >
                   <td className="px-4 py-4 font-semibold whitespace-nowrap w-1/5">
-                    {pkg.name}
-                    {pkg.bestValue && (
-                      <div className="text-xs bg-green-500 text-white px-2 py-1 mt-1 inline-block">
-                        Best Value
-                      </div>
-                    )}
+                    <div className="flex flex-col">
+                      <span>{pkg.name}</span>
+                      {pkg.bestValue && (
+                        <div className="text-xs bg-green-500 text-white px-2 py-1 mt-2 inline-block rounded font-bold">
+                          Best Value
+                        </div>
+                      )}
+                    </div>
                   </td>
                   <td className="px-4 py-4 w-1/5">{pkg.duration}</td>
                   <td className="px-4 py-4 font-bold w-1/5">
@@ -122,10 +124,10 @@ export default function CommercialAdvertising() {
                     <a
                       href={`/pages/contact?service=commercial-advertising`}
                       aria-label={`Get Started with ${pkg.name}`}
-                      className={`inline-block px-4 py-2 text-sm font-semibold transition ${
+                      className={`inline-block px-3 py-2 text-xs font-bold transition rounded ${
                         pkg.bestValue
-                          ? "bg-green-600 hover:bg-green-700"
-                          : "bg-gray-800 hover:bg-gray-700"
+                          ? "bg-green-600 hover:bg-green-700 text-white"
+                          : "bg-gray-800 hover:bg-gray-700 text-white"
                       }`}
                     >
                       Get Started
@@ -239,21 +241,6 @@ export default function CommercialAdvertising() {
           </div>
         </div>
 
-        {/* Bottom Text + Buttons */}
-        <div className="text-center max-w-3xl mx-auto">
-          <p className="text-lg text-gray-300 mb-8">
-            Ready to take your brand to the next level? Choose a package and let
-            us help tell your story in a way that resonates with your audience.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a
-              href="/pages/contact"
-              className="px-8 py-4 bg-gray-800 hover:bg-gray-700 font-bold transition"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

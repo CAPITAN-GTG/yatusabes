@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Send, ArrowRight, Upload, Building2, MapPin, Phone, Mail, Clock, Package, Image as ImageIcon, FileText } from "lucide-react";
+import { toast } from 'react-toastify';
 
 export default function CommercialAdvertisingForm() {
   const [formData, setFormData] = useState({
@@ -58,32 +59,72 @@ export default function CommercialAdvertisingForm() {
     
     // Check for file errors before submission
     if (fileError) {
-      alert("Please fix the file upload error before submitting.");
+      toast.error("Please fix the file upload error before submitting.");
+      return;
+    }
+
+    // Validate required fields
+    const requiredFields = ['businessName', 'address', 'phoneNumber', 'email', 'daysHours', 'productsServices', 'advertisingDescription', 'planOfAction'];
+    const missingFields = requiredFields.filter(field => {
+      const value = formData[field as keyof typeof formData];
+      return !value || (typeof value === 'string' && !value.trim());
+    });
+    
+    if (missingFields.length > 0) {
+      toast.error(`Please fill in all required fields: ${missingFields.join(', ')}`);
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error('Please enter a valid email address');
       return;
     }
     
     setIsSubmitting(true);
     
-    // Here you would typically send the form data to your backend
-    // For now, we'll just simulate a submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      alert("Thank you for your submission! We'll get back to you soon.");
-      // Reset form
-      setFormData({
-        businessName: "",
-        address: "",
-        phoneNumber: "",
-        email: "",
-        daysHours: "",
-        productsServices: "",
-        businessLogo: null,
-        advertisingDescription: "",
-        planOfAction: ""
+      // Create FormData for file upload
+      const submitData = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        if (value !== null && value !== undefined) {
+          if (key === 'businessLogo' && value instanceof File) {
+            submitData.append(key, value);
+          } else {
+            submitData.append(key, value as string);
+          }
+        }
       });
-      setFileError("");
+
+      const response = await fetch('/api/commercial-advertising', {
+        method: 'POST',
+        body: submitData,
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success('Thank you for your commercial advertising request! We\'ll review it and get back to you within 24 hours.');
+        // Reset form
+        setFormData({
+          businessName: "",
+          address: "",
+          phoneNumber: "",
+          email: "",
+          daysHours: "",
+          productsServices: "",
+          businessLogo: null,
+          advertisingDescription: "",
+          planOfAction: ""
+        });
+        setFileError("");
+      } else {
+        toast.error(result.error || 'Failed to submit your request. Please try again.');
+      }
     } catch (error) {
-      alert("There was an error submitting your form. Please try again.");
+      console.error('Error submitting form:', error);
+      toast.error('Failed to submit your request. Please try again.');
     } finally {
       setIsSubmitting(false);
     }

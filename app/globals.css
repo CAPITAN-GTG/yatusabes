@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* BOZART Font */
+@font-face {
+  font-family: 'BOZART';
+  src: url('/BOZART.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Dark mode as default */
   --background: #0a0a0a;
@@ -9,13 +18,23 @@
   --text-muted: #a0a0a0;
   --text-secondary: #d0d0d0;
   
-  /* Miami color palette */
-  --miami-blue: #00b4d8;
-  --miami-pink: #ff6b9d;
-  --miami-yellow: #ffd60a;
-  --miami-purple: #7209b7;
-  --miami-orange: #ff8500;
-  --miami-cyan: #00d4aa;
+  /* Graffiti/Club Neon color palette */
+  --neon-turquoise: #00ffff;
+  --hot-pink: #ff1493;
+  --electric-blue: #00bfff;
+  --neon-green: #39ff14;
+  --purple-haze: #8a2be2;
+  --orange-glow: #ff4500;
+  --lime-shock: #ccff00;
+  --magenta-pop: #ff00ff;
+  
+  /* Legacy Miami colors for compatibility */
+  --miami-blue: #00bfff;
+  --miami-pink: #ff1493;
+  --miami-yellow: #ccff00;
+  --miami-purple: #8a2be2;
+  --miami-orange: #ff4500;
+  --miami-cyan: #00ffff;
   --miami-coral: #ff6b6b;
   
   /* Dark mode specific colors */
@@ -26,7 +45,8 @@
   --dark-text-muted: #a0a0a0;
 }
 
-@theme inline {
+/* CSS custom properties for Tailwind integration */
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -36,37 +56,80 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-family: 'Fredoka One', 'Open Sans', Arial, Helvetica, sans-serif;
   min-height: 100vh;
 }
 
-/* Miami-style gradient backgrounds */
+/* Infinite scroll animation for sponsors carousel */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+/* Graffiti/Club style gradient backgrounds */
+.graffiti-gradient {
+  background: linear-gradient(135deg, #00ffff, #ff1493);
+}
+
+.neon-turquoise-gradient {
+  background: linear-gradient(135deg, #00ffff);
+}
+
+.hot-pink-gradient {
+  background: linear-gradient(135deg, #ff1493);
+}
+
+.electric-gradient {
+  background: linear-gradient(135deg, #ccff00, #39ff14);
+}
+
+.club-gradient {
+  background: linear-gradient(135deg, #8a2be2, #ff00ff);
+}
+
+.neon-glow-gradient {
+  background: linear-gradient(135deg, #ff4500, #ccff00);
+}
+
+.street-gradient {
+  background: linear-gradient(135deg, #00ffff, #ff1493);
+}
+
+/* Legacy Miami gradients updated with neon colors */
 .miami-gradient {
-  background: linear-gradient(135deg, #00b4d8, #ff6b9d, #ffd60a);
+  background: linear-gradient(135deg, #00ffff, #ff1493, #ccff00);
 }
 
 .miami-gradient-blue {
-  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  background: linear-gradient(135deg, #00bfff, #00ffff);
 }
 
 .miami-gradient-pink {
-  background: linear-gradient(135deg, #ff6b9d, #c77dff);
+  background: linear-gradient(135deg, #ff1493, #ff00ff);
 }
 
 .miami-gradient-yellow {
-  background: linear-gradient(135deg, #ffd60a, #ff8500);
+  background: linear-gradient(135deg, #ccff00, #39ff14);
 }
 
 .miami-gradient-purple {
-  background: linear-gradient(135deg, #7209b7, #c77dff);
+  background: linear-gradient(135deg, #8a2be2, #ff00ff);
 }
 
 .miami-gradient-orange {
-  background: linear-gradient(135deg, #ff8500, #ffd60a);
+  background: linear-gradient(135deg, #ff4500, #ccff00);
 }
 
 .miami-gradient-cyan {
-  background: linear-gradient(135deg, #00d4aa, #00b4d8);
+  background: linear-gradient(135deg, #00ffff, #00bfff);
 }
 
 /* Dark mode card styles */
@@ -117,9 +180,41 @@ body {
   box-shadow: 0 8px 16px rgba(114, 9, 183, 0.1);
 }
 
-/* Miami-style text effects */
+/* Graffiti/Club text effects - Subtle glow */
+.graffiti-text {
+  background: linear-gradient(135deg, #00ffff, #ff1493);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-family: 'Permanent Marker', cursive;
+  text-shadow: 0 0 3px rgba(0, 255, 255, 0.3);
+}
+
+.neon-text {
+  color: #00ffff;
+  text-shadow: 0 0 3px rgba(0, 255, 255, 0.4);
+  font-family: 'Bungee', cursive;
+}
+
+.hot-pink-text {
+  color: #ff1493;
+  text-shadow: 0 0 3px rgba(255, 20, 147, 0.4);
+  font-family: 'Righteous', cursive;
+}
+
+.street-text {
+  background: linear-gradient(135deg, #00ffff, #ff1493);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 600;
+}
+
+/* Updated Miami text effects with neon colors */
 .miami-text {
-  background: linear-gradient(135deg, #00b4d8, #ff6b9d, #ffd60a);
+  background: linear-gradient(135deg, #00ffff, #ff1493, #ccff00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -127,43 +222,84 @@ body {
 }
 
 .miami-text-blue {
-  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  background: linear-gradient(135deg, #00bfff, #00ffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .miami-text-pink {
-  background: linear-gradient(135deg, #ff6b9d, #c77dff);
+  background: linear-gradient(135deg, #ff1493, #ff00ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .miami-text-yellow {
-  background: linear-gradient(135deg, #ffd60a, #ff8500);
+  background: linear-gradient(135deg, #ccff00, #39ff14);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Glow effects */
+/* Neon Glow effects - Reduced intensity */
+.neon-glow {
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.3), 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.hot-pink-glow {
+  box-shadow: 0 0 5px rgba(255, 20, 147, 0.3), 0 0 10px rgba(255, 20, 147, 0.2);
+}
+
+.electric-glow {
+  box-shadow: 0 0 5px rgba(204, 255, 0, 0.3), 0 0 10px rgba(204, 255, 0, 0.2);
+}
+
+.club-glow {
+  box-shadow: 0 0 5px rgba(138, 43, 226, 0.3), 0 0 10px rgba(138, 43, 226, 0.2);
+}
+
+/* Legacy glow effects updated - Reduced intensity */
 .glow-blue {
-  box-shadow: 0 0 20px rgba(0, 180, 216, 0.3);
+  box-shadow: 0 0 5px rgba(0, 191, 255, 0.3), 0 0 10px rgba(0, 191, 255, 0.2);
 }
 
 .glow-pink {
-  box-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
+  box-shadow: 0 0 5px rgba(255, 20, 147, 0.3), 0 0 10px rgba(255, 20, 147, 0.2);
 }
 
 .glow-yellow {
-  box-shadow: 0 0 20px rgba(255, 214, 10, 0.3);
+  box-shadow: 0 0 5px rgba(204, 255, 0, 0.3), 0 0 10px rgba(204, 255, 0, 0.2);
 }
 
-/* Optimized static background */
+/* Graffiti/Club background */
 .animated-bg {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 25%, #0a1a1a 50%, #1a0a1a 75%, #0a0a0a 100%);
   background-attachment: fixed;
+}
+
+.street-bg {
+  background: radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(204, 255, 0, 0.1) 0%, transparent 50%),
+              linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%);
+  background-attachment: fixed;
+}
+
+.graffiti-texture {
+  position: relative;
+}
+
+.graffiti-texture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><filter id="noise"><feTurbulence baseFrequency="0.9" numOctaves="4" result="noise"/><feColorMatrix in="noise" type="saturate" values="0"/><feComponentTransfer><feFuncA type="discrete" tableValues=".5 .6 .7 .8"/></feComponentTransfer></filter></defs><rect width="100" height="100" filter="url(%23noise)" opacity="0.1"/></svg>') repeat;
+  pointer-events: none;
+  opacity: 0.3;
 }
 
 /* Custom scale utility for subtle hover effects */
@@ -178,10 +314,102 @@ body {
 
 @keyframes pulseGlow {
   from {
-    box-shadow: 0 0 20px rgba(0, 180, 216, 0.3);
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
   }
   to {
-    box-shadow: 0 0 30px rgba(0, 180, 216, 0.6), 0 0 40px rgba(255, 107, 157, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 15px rgba(255, 20, 147, 0.3), 0 0 20px rgba(204, 255, 0, 0.2);
+  }
+}
+
+/* New rollup animation for numbers */
+@keyframes rollupNumber {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.animate-rollup {
+  animation: rollupNumber 2s ease-out forwards;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.animate-rollup-delay-1 {
+  animation: rollupNumber 2s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-rollup-delay-2 {
+  animation: rollupNumber 2s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-rollup-delay-3 {
+  animation: rollupNumber 2s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+/* Neon border animation */
+@keyframes neonBorder {
+  0%, 100% {
+    border-color: #00ffff;
+    box-shadow: 0 0 5px #00ffff, inset 0 0 5px #00ffff;
+  }
+  33% {
+    border-color: #ff1493;
+    box-shadow: 0 0 5px #ff1493, inset 0 0 5px #ff1493;
+  }
+  66% {
+    border-color: #ccff00;
+    box-shadow: 0 0 5px #ccff00, inset 0 0 5px #ccff00;
+  }
+}
+
+.animate-neon-border {
+  animation: neonBorder 3s ease-in-out infinite;
+  border: 2px solid #00ffff;
+}
+
+/* Fade in animation for text loading */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading bar animation */
+.animate-loading-bar {
+  animation: loadingBar 4s ease-in-out infinite;
+  width: 85%;
+}
+
+@keyframes loadingBar {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 85%;
+  }
+  100% {
+    width: 0%;
   }
 }
 

@@ -20,16 +20,17 @@ export default function Gallery() {
   const [hoveredImage, setHoveredImage] = useState<string | null>(null);
 
   const galleryImages = [
-    { src: "/YTStudio.webp", alt: "Studio Session 1", category: "studio" },
-    { src: "/YTStudio-2.webp", alt: "Interview Session", category: "interview" },
-    { src: "/YTStudio-3.webp", alt: "Community Event", category: "event" },
-    { src: "/YTStudio-4.webp", alt: "Behind the Scenes", category: "behind" },
-    { src: "/YTStudio-5.webp", alt: "Recording Session", category: "studio" },
-    { src: "/YTStudio-6.webp", alt: "Podcast Discussion", category: "interview" },
-    { src: "/YTStudio-7.webp", alt: "Studio Setup", category: "studio" },
-    { src: "/YTStudio-8.webp", alt: "Community Gathering", category: "event" },
-    { src: "/YTStudio-9.webp", alt: "Behind the Mic", category: "behind" },
-    { src: "/YTStudio-10.webp", alt: "Recording Equipment", category: "studio" },
+    { src: "/newpics-1.jpeg", alt: "Studio Session 1", category: "studio" },
+    { src: "/newpics-2.jpeg", alt: "Interview Session", category: "interview" },
+    { src: "/newpics-3.jpeg", alt: "Community Event", category: "interview" },
+    { src: "/newpics-4.jpeg", alt: "Behind the Scenes", category: "studio" },
+    { src: "/newpics-5.jpeg", alt: "Recording Session", category: "studio" },
+    { src: "/newpics-6.jpeg", alt: "Podcast Discussion", category: "interview" },
+    { src: "/newpics-7.jpeg", alt: "Studio Setup", category: "studio" },
+    { src: "/newpics-8.jpeg", alt: "Community Gathering", category: "interview" },
+    { src: "/newpics-9.jpeg", alt: "Behind the Mic", category: "studio" },
+    { src: "/newpics-10.jpeg", alt: "Recording Equipment", category: "studio" },
+    { src: "/newpics-11.jpeg", alt: "Additional Studio Content", category: "studio" },
   ];
 
   const categories = [
@@ -37,7 +38,6 @@ export default function Gallery() {
     { id: "studio", label: "Studio" },
     { id: "interview", label: "Interviews" },
     { id: "event", label: "Events" },
-    { id: "behind", label: "Behind Scenes" },
   ];
 
   // Memoize filtered images to prevent unnecessary recalculations
@@ -172,19 +172,19 @@ const GalleryImage = ({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="relative aspect-square overflow-hidden bg-gray-900">
+      <div className="relative aspect-square overflow-hidden bg-gray-900 rounded-lg">
         <Image
           src={image.src}
           alt={image.alt}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-          className={`object-cover transition-transform duration-200 ${
+          className={`object-cover transition-transform duration-200 rounded-lg ${
             isHovered ? 'scale-102' : 'scale-100'
           }`}
           loading={index < 4 ? "eager" : "lazy"}
           priority={index < 2}
         />
-        <div className={`absolute inset-0 border-2 transition-opacity duration-200 ${
+        <div className={`absolute inset-0 border-2 transition-opacity duration-200 rounded-lg ${
           isHovered ? 'border-white opacity-100' : 'border-transparent opacity-0'
         }`} />
       </div>
